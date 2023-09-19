@@ -19,7 +19,7 @@ if(navClose){
     })
 }
 
-/*==================== REMOVE MENU MOBILE ====================*/
+/* ==================== REMOVE MENU MOBILE ====================*/
 const navlink = document.querySelectorAll('.nav__link')
 
 function linkAction(){
@@ -27,6 +27,16 @@ function linkAction(){
     navMenu.classList.remove('show-menu')
 }
 navlink.forEach(n => n.addEventListener('click', linkAction))
+
+/* ========== typed.js ============ */
+const typed = new Typed(".home__dynamic", {
+    strings: ["Software Engineer", "Full Stack Developer", "Frontend Developer", "Backend Developer"],
+    typeSpeed: 100,
+    backSpeed: 100,
+    loop: true,
+    showCursor: true,
+    cursorChar: '|',
+})
 
 /*==================== ACCORDION SKILLS ====================*/
 const skillsContent = document.getElementsByClassName('skills__content'),

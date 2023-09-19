@@ -272,6 +272,66 @@ img {
   box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
 }
 
+/* ===== slapsh screen ===== */
+#loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: var(--container-color);
+  animation: anim1 2s cubic-bezier(0.19, 1, 0.22, 1) 5s both;
+}
+
+#wrapperload{
+  width: 500px;
+  height: 100px;
+  overflow: hidden;
+}
+
+#wrapperload .elem{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  /* background-color: #efefef; */
+}
+
+.name_desc{
+  color: var(--footer-color);
+}
+
+.name_tag{
+  width: 40%;
+  color: var(--first-color) !important;
+  text-align: center;
+}
+
+#wrapperload .elem:nth-child(1){
+  animation: anim 2s cubic-bezier(0.19, 1, 0.22, 1) 1.5s both;
+}
+#wrapperload .elem:nth-child(2){
+  animation: anim 2s cubic-bezier(0.19, 1, 0.22, 1) 3s both;
+}
+
+@keyframes anim{
+  to{
+    margin-top: -100px;
+  }
+}
+
+@keyframes anim1{
+  to{
+    transform: translateY(-100%);
+  }
+}
+
+
 /*==================== HOME ====================*/
 .home__container{
   gap: 1rem;
@@ -322,6 +382,13 @@ img {
   color: var(--text-color);
   font-weight: var(--font-medium);
   margin-bottom: var(--mb-0-75);
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
+}
+
+.home__dynamic{
+  color: var(--first-color);
 }
 
 .home__description{
@@ -355,6 +422,62 @@ transform: translateY(.25rem);
 .home__scroll-arrow{
   font-size: 1.25rem;
 }
+
+.bubbles img{
+  width: 4em;
+  animation: bubble 7s linear infinite;
+  filter: drop-shadow(5px 7px 3px rgba(13, 76, 107, 0.4));
+}
+
+.bubbles{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0;
+}
+
+@keyframes bubble{
+  0%{
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+    /* transform: rotate(20deg); */
+  }
+  70%{
+    opacity: 1;
+    /* transform: rotate(20deg); */
+  }
+  100%{
+    transform: translateY(-80vh) rotate(90deg);
+    opacity: 0;
+    /* transform: rotate(20deg); */
+  }
+}
+
+.bubbles img:nth-child(1){
+  animation-delay: 4s;
+}
+.bubbles img:nth-child(2){
+  animation-delay: .5s;
+}
+.bubbles img:nth-child(3){
+  animation-delay: 3s;
+}
+.bubbles img:nth-child(4){
+  animation-delay: 7.5s;
+}
+.bubbles img:nth-child(5){
+  animation-delay: 4.5s;
+}
+.bubbles img:nth-child(6){
+  animation-delay: 1.5s;
+}
+
+
 
 /*==================== BUTTONS ====================*/
 .button{
