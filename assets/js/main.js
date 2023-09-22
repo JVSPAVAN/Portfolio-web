@@ -203,3 +203,42 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+
+// ===========  send email ==============
+
+function sendMail(){
+    (function(){
+        emailjs.init("NXRu7LK5XOSUApYkt"); // account public key
+    })();
+
+    var params = {
+        sendername: document.querySelector("#sendername").value,
+        senderemail: document.querySelector("#senderemail").value,
+        subject: document.querySelector("#subject").value,
+        message: document.querySelector("#message").value,
+    };
+
+    var serviceID = "service_lkruyo9";
+    var templateID = "template_r3cqs3u";
+
+    emailjs.send(serviceID, templateID, params)
+    .then(res => {
+        // alert("Email sent successfully!");
+        popup = document.getElementById("popup");
+        cover = document.getElementById("cover");
+        openPopup();
+    })
+    .catch();
+}
+
+// ============= show/close popup ========
+function openPopup(){
+    popup.classList.add("open-popup");
+    cover.classList.add("show-cover");
+}
+
+function closePopup(){
+    popup.classList.remove("open-popup");
+    cover.classList.remove("show-cover");
+}

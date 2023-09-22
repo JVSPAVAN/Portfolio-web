@@ -33,6 +33,15 @@
             </div>
         </div>
 
+        <div id="cover">
+            <div class="popup" id="popup">
+                <img src="assets/img/404-tick.png" alt="" srcset="">
+                <h2 id="pop-wish">Thank You!</h2>
+                <p id="pop-text">Your details has been successfully sent.</p>
+                <button type="button" onclick="closePopup()">OK</button>
+            </div>
+        </div>
+
 
         <!--==================== HEADER ====================-->
         <header class="header" id="header">
@@ -822,23 +831,23 @@
                             <div class="contact__inputs grid">
                                 <div class="contact__content">
                                     <label for="" class="contact__label">Name</label>
-                                    <input type="text" class="contact__input">
+                                    <input type="text" class="contact__input" id="sendername">
                                 </div>
                                 <div class="contact__content">
                                     <label for="" class="contact__label">Email</label>
-                                    <input type="email" class="contact__input">
+                                    <input type="email" class="contact__input" id="senderemail">
                                 </div>
                             </div>
                             <div class="contact__content">
                                 <label for="" class="contact__label">Job Title</label>
-                                <input type="text" class="contact__input">
+                                <input type="text" class="contact__input" id="subject">
                             </div>
                             <div class="contact__content">
                                 <label for="" class="contact__label">JOb Description</label>
-                                <textarea name="" id="" cols="0" rows="5" class="contact__input"></textarea>
+                                <textarea name="" id="message" cols="0" rows="5" class="contact__input"></textarea>
                             </div>
                             <div>
-                                <a href="#" class="button button--flex">
+                                <a href="#" class="button button--flex" onclick="sendMail()">
                                     Send message
                                     <i class="uil uil-message button__icon"></i>
                                 </a>
@@ -897,6 +906,9 @@
         <a href="#" class="scrollup" id="scroll-up">
             <i class="uil uil-angle-double-up scrollup__icon"></i>
         </a>
+
+        <!-- =========== Email js ================ -->
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
         <!--==================== SWIPER JS ====================-->
         <script src="assets/js/swiper-bundle.min.js"></script>
