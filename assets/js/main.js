@@ -200,8 +200,9 @@ themeButton.addEventListener('click', () => {
     document.body.classList.toggle(darkTheme)
     themeButton.classList.toggle(iconTheme)
     // We save the theme and the current icon that the user chose
-    localStorage.setItem('selected-theme', getCurrentTheme())
-    localStorage.setItem('selected-icon', getCurrentIcon())
+    localStorage.setItem('selected-theme', getCurrentTheme());
+    localStorage.setItem('selected-icon', getCurrentIcon());
+    initMap();
 })
 
 
@@ -350,16 +351,8 @@ async function initMap() {
       ],
 };
 
-let mapOptions = options;
-themeButton.addEventListener('click', () => {
- mapOptions = document.body.classList.contains(darkTheme) ? optionsDark : options ;
- console.log("mps", mapOptions);
-});
-
-console.log("mps original", mapOptions);
-
   // The map, centered at Home, Charlotte
-  map = new Map(document.getElementById("map"), mapOptions);
+  map = new Map(document.getElementById("map"), (document.body.classList.contains(darkTheme) ? optionsDark : options));
 
   // The marker, positioned at Home, Charlotte
   const marker = new AdvancedMarkerElement({
