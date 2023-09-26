@@ -242,3 +242,131 @@ function closePopup(){
     popup.classList.remove("open-popup");
     cover.classList.remove("show-cover");
 }
+
+// =================== maps =================
+let map;
+
+async function initMap() {
+  // The location of Home, Charlotte
+  const position = { lat:  35.36445189319195, lng: -80.81245413831762 };
+  const positionCenter = { lat:  35.22772505180033, lng: -80.83984137702215 };
+  // Request needed libraries.
+  //@ts-ignore
+  const { Map } = await google.maps.importLibrary("maps");
+  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+  var options = {
+        zoom: 8.5,
+        center: positionCenter,
+        mapId: "d69060f77208f98a",
+  };
+
+  var optionsDark = {
+    zoom: 8.5,
+    center: positionCenter,
+    mapId: "9092c0145cf87fab",
+    styles: [
+        { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
+        {
+          elementType: "labels.text.stroke",
+          stylers: [{ color: "#242f3e" }],
+        },
+        { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+        {
+          featureType: "administrative.locality",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#d59563" }],
+        },
+        {
+          featureType: "poi",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#d59563" }],
+        },
+        {
+          featureType: "poi.park",
+          elementType: "geometry",
+          stylers: [{ color: "#263c3f" }],
+        },
+        {
+          featureType: "poi.park",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#6b9a76" }],
+        },
+        {
+          featureType: "road",
+          elementType: "geometry",
+          stylers: [{ color: "#38414e" }],
+        },
+        {
+          featureType: "road",
+          elementType: "geometry.stroke",
+          stylers: [{ color: "#212a37" }],
+        },
+        {
+          featureType: "road",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#9ca5b3" }],
+        },
+        {
+          featureType: "road.highway",
+          elementType: "geometry",
+          stylers: [{ color: "#746855" }],
+        },
+        {
+          featureType: "road.highway",
+          elementType: "geometry.stroke",
+          stylers: [{ color: "#1f2835" }],
+        },
+        {
+          featureType: "road.highway",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#f3d19c" }],
+        },
+        {
+          featureType: "transit",
+          elementType: "geometry",
+          stylers: [{ color: "#2f3948" }],
+        },
+        {
+          featureType: "transit.station",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#d59563" }],
+        },
+        {
+          featureType: "water",
+          elementType: "geometry",
+          stylers: [{ color: "#17263c" }],
+        },
+        {
+          featureType: "water",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#515c6d" }],
+        },
+        {
+          featureType: "water",
+          elementType: "labels.text.stroke",
+          stylers: [{ color: "#17263c" }],
+        },
+      ],
+};
+
+let mapOptions = options;
+themeButton.addEventListener('click', () => {
+ mapOptions = document.body.classList.contains(darkTheme) ? optionsDark : options ;
+ console.log("mps", mapOptions);
+});
+
+console.log("mps original", mapOptions);
+
+  // The map, centered at Home, Charlotte
+  map = new Map(document.getElementById("map"), mapOptions);
+
+  // The marker, positioned at Home, Charlotte
+  const marker = new AdvancedMarkerElement({
+    map: map,
+    position: position,
+    title: "Home, NC",
+  });
+}
+
+initMap();
