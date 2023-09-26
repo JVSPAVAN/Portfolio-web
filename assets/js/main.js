@@ -360,6 +360,16 @@ async function initMap() {
     position: position,
     title: "Home, NC",
   });
+
+//   add marker to map
+ /*  google.maps.event.addListener(map, 'click', 
+  function(event) {
+    const marker = new AdvancedMarkerElement({
+        map: map,
+        position: event.latlng,
+      });
+  }); */
+
 }
 
 initMap();
