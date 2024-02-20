@@ -249,8 +249,8 @@ let map;
 
 async function initMap() {
   // The location of Home, Charlotte
-  const position = { lat:  35.36445189319195, lng: -80.81245413831762 };
-  const positionCenter = { lat:  35.22772505180033, lng: -80.83984137702215 };
+  const position = { lat:  33.99143991693945, lng: -81.3085974425806 };
+  const positionCenter = { lat:  34.00098791920634, lng: -81.0440566410068 };
   // Request needed libraries.
   //@ts-ignore
   const { Map } = await google.maps.importLibrary("maps");
@@ -358,7 +358,7 @@ async function initMap() {
   const marker = new AdvancedMarkerElement({
     map: map,
     position: position,
-    title: "Home, NC",
+    title: "Home, SC",
   });
 
 //   add marker to map
