@@ -102,20 +102,20 @@ modalCloses.forEach((modalClose) =>{
 })
 
 /*==================== PORTFOLIO SWIPER  ====================*/
-let swiperPortfolio = new Swiper(".portfolio__container", {
-    cssMode: true,
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true
-    },
-    // mousewheel: true,
-    // keyboard: true,
-  });
+// let swiperPortfolio = new Swiper(".portfolio__container", {
+//     cssMode: true,
+//     loop: true,
+//     navigation: {
+//       nextEl: ".swiper-button-next",
+//       prevEl: ".swiper-button-prev",
+//     },
+//     pagination: {
+//       el: ".swiper-pagination",
+//       clickable: true
+//     },
+//     // mousewheel: true,
+//     // keyboard: true,
+//   });
 
 /*==================== TESTIMONIAL ====================*/
 let swiperTestimonial = new Swiper(".testimonial__container", {
@@ -144,15 +144,17 @@ function scrollActive(){
 
     sections.forEach(current =>{
         const sectionHeight = current.offsetHeight
-        const sectionTop = current.offsetTop - 20;
+        const sectionTop = current.offsetTop - 50;
         sectionId = current.getAttribute('id')
+        
+        const sectionLink = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
 
-       // console.log(sectionId);
-        document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
-        }else{
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
+        if(sectionLink){
+            if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+                sectionLink.classList.add('active-link')
+            }else{
+                sectionLink.classList.remove('active-link')
+            }
         }
     })
 }
@@ -249,8 +251,8 @@ let map;
 
 async function initMap() {
   // The location of Home, Charlotte
-  const position = { lat:  33.99143991693945, lng: -81.3085974425806 };
-  const positionCenter = { lat:  34.00098791920634, lng: -81.0440566410068 };
+  const position = { lat: 41.75900667902197, lng: -72.67507431639102 };
+  const positionCenter = { lat: 41.766103761694836, lng: -72.67530002536822 };
   // Request needed libraries.
   //@ts-ignore
   const { Map } = await google.maps.importLibrary("maps");
@@ -358,7 +360,7 @@ async function initMap() {
   const marker = new AdvancedMarkerElement({
     map: map,
     position: position,
-    title: "Home, SC",
+    title: "Home, CT",
   });
 
 //   add marker to map

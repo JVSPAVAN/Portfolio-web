@@ -1,0 +1,335 @@
+:root {
+	--color-text-grid-primary: #fdf17b;
+	--color-text-grid-alt: #8bff85;
+	--color-text-grid-white: #fff;
+	--color-grid-bg: #000;
+	--color-grid-link: #54ad8a;
+	--color-grid-link-hover: #a054fd;
+	--cut: 20px;
+}
+
+/* Page Loader removed as it conflicts with main site */
+
+.unbutton {
+	background: none;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	font: inherit;
+	cursor: pointer;
+}
+
+.unbutton:focus {
+	outline: none;
+}
+
+.portfolio-grid {
+	display: grid;
+	position: relative;
+	/* Adjusted grid width/padding to fit existing layout */
+	width: 100%;
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 2rem 0;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 2rem;
+	z-index: 1;
+	color: var(--color-text-grid-white);
+}
+
+.portfolio-grid__title {
+	text-transform: uppercase;
+	font-size: 6.75vw;
+	line-height: 0.8;
+	opacity: 0.4;
+	font-family: var(--body-font);
+	font-weight: 200;
+	line-height: 0.8;
+	background-color: #fff;
+	background-image: linear-gradient(45deg, var(--color-text-grid-primary), var(--color-grid-link), var(--color-grid-link-hover));
+	background-size: 100%;
+	background-repeat: repeat;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+	display: none;
+	/* Hiding title as we have section title */
+}
+
+.card {
+	aspect-ratio: 1;
+	overflow: hidden;
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	gap: 0.5rem;
+	padding: 0.5rem;
+	grid-template-areas: 'box-a box-b' 'box-c box-d';
+	cursor: pointer;
+	border-radius: 10px;
+	/* Optional rounding to match portfolio style */
+}
+
+.card__img {
+	background-size: cover;
+	background-position: 50% 50%;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	will-change: filter, transform;
+}
+
+/* Effect 2 styles (Light Mode) */
+body:not(.dark-theme) .portfolio-grid .card__img {
+	transform: scale3d(1.3, 1.3, 1.3);
+}
+
+/* Effect 1 styles (Dark Mode) - GSAP handles scale */
+body.dark-theme .portfolio-grid .card__img {
+	/* transition handled by GSAP */
+}
+
+.card__box {
+	opacity: 0;
+	z-index: 2;
+	padding: 1rem;
+	display: flex;
+	position: relative;
+	overflow: hidden;
+	flex-direction: column;
+	background-color: rgba(255, 255, 255, .15);
+	backdrop-filter: blur(5px);
+	gap: 2rem;
+}
+
+body.dark-theme .card__box {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.card__box--a {
+	grid-area: box-a;
+}
+
+.card__box--b {
+	grid-area: box-b;
+}
+
+.card__box--c {
+	grid-area: box-c;
+}
+
+.card__box--d {
+	grid-area: box-d;
+}
+
+.card__box--b,
+.card__box--d {
+	align-items: flex-end;
+	text-align: right;
+}
+
+/* Corners */
+.card__box--a,
+.card__box--d {
+	clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, var(--cut) 100%, 0 calc(100% - var(--cut)));
+}
+
+/* Custom Alignment Overrides */
+/* Buttons Containers (Center) */
+.card__box--b,
+.card__box--d {
+	justify-content: center;
+	align-items: center;
+}
+
+/* Content Containers (Space Between) */
+.card__box--a,
+.card__box--c {
+	justify-content: space-between;
+}
+
+/* Hide empty boxes automatically */
+.card__box:empty {
+	background: transparent !important;
+	backdrop-filter: none !important;
+	box-shadow: none !important;
+	pointer-events: none;
+}
+
+.card__box--b,
+.card__box--c {
+	clip-path: polygon(0 var(--cut), var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
+}
+
+.card__box-number {
+	font-size: clamp(2rem, 5vw, 3.5rem);
+	font-family: var(--body-font);
+	font-weight: 200;
+	line-height: 0.8;
+	grid-area: number;
+	color: var(--color-text-grid-primary);
+}
+
+.card__box--alt {
+	color: var(--color-text-grid-alt);
+}
+
+.card__box-tags,
+.card__box-category {
+	font-size: 0.85rem;
+	font-weight: 600;
+	margin-top: auto;
+}
+
+.card__box-tags {
+	grid-area: tags;
+	font-size: 0.65rem;
+	color: var(--color-text-grid-white);
+}
+
+.card__box-category {
+	grid-area: category;
+	color: var(--color-text-grid-white);
+}
+
+.card__box>span {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+
+/* Utility Classes */
+.d-flex {
+	display: flex;
+}
+
+.justify-content-end {
+	justify-content: flex-end;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.align-items-end {
+	align-items: flex-end;
+}
+
+/* Button styles inside card */
+.card__box-buttons {
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+	align-items: flex-end;
+	z-index: 10;
+}
+
+.card__box-buttons a.button {
+	padding: 0.5rem 0;
+	font-size: 0.8rem;
+	font-weight: var(--font-medium);
+	color: var(--first-color);
+	background: transparent;
+	border: none;
+	text-align: center;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	width: 120px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: none;
+	border-radius: 0;
+	position: relative;
+	z-index: 1;
+}
+
+/* Background/Border Pseudo using Mask */
+.card__box-buttons a.button::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: var(--first-color);
+	z-index: -1;
+
+	/* Define gradient mask for cut corners */
+	--cut-size: 15px;
+	--mask-grad: linear-gradient(135deg, transparent var(--cut-size), #fff 0);
+
+	/* Dual mask layers: Outer (Full) XOR Inner (Smaller) = Border */
+	-webkit-mask: var(--mask-grad) no-repeat center / 100% 100%, var(--mask-grad) no-repeat center / calc(100% - 4px) calc(100% - 4px);
+	-webkit-mask-composite: xor;
+	mask: var(--mask-grad) no-repeat center / 100% 100%, var(--mask-grad) no-repeat center / calc(100% - 4px) calc(100% - 4px);
+	mask-composite: exclude;
+
+	transition: opacity 0.3s;
+}
+
+/* Demo Button (Top) - Cut Top Left (135deg) */
+.card__box-buttons a.button:first-child::before {
+	--mask-grad: linear-gradient(135deg, transparent var(--cut-size), #fff 0);
+}
+
+/* Repo Button (Bottom) - Cut Bottom Right (315deg) */
+.card__box-buttons a.button:last-child::before {
+	--mask-grad: linear-gradient(315deg, transparent var(--cut-size), #fff 0);
+}
+
+/* Hover: Solid Fill (Single Mask Layer) */
+.card__box-buttons a.button:hover::before {
+	-webkit-mask: var(--mask-grad) no-repeat center / 100% 100%;
+	mask: var(--mask-grad) no-repeat center / 100% 100%;
+}
+
+.card__box-buttons a.button:hover {
+	color: #fff;
+	filter: drop-shadow(0 0 5px var(--first-color));
+}
+
+/* Box D Button Overrides (Flip Cuts to match Top-Right/Bottom-Left box shape) */
+.card__box--d .card__box-buttons a.button:first-child::before {
+	--mask-grad: linear-gradient(225deg, transparent var(--cut-size), #fff 0);
+}
+
+.card__box--d .card__box-buttons a.button:last-child::before {
+	--mask-grad: linear-gradient(45deg, transparent var(--cut-size), #fff 0);
+}
+
+/* Staggered Layout for Portfolio Grid (Desktop) */
+@media screen and (min-width: 768px) {
+	.portfolio-grid {
+		grid-template-columns: 1fr 1fr;
+		/* Ensure rows are sized automatically based on content */
+		grid-auto-rows: auto;
+	}
+
+	/* 1st Portfolio: Row 1, Col 1 */
+	.portfolio-grid .card:nth-of-type(1) {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	/* 2nd Portfolio: Row 2, Col 1 */
+	.portfolio-grid .card:nth-of-type(2) {
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+	/* 3rd Portfolio: Row 2, Col 2 */
+	.portfolio-grid .card:nth-of-type(3) {
+		grid-column: 2;
+		grid-row: 2;
+	}
+
+	/* 4th Portfolio: Row 3, Col 2 */
+	.portfolio-grid .card:nth-of-type(4) {
+		grid-column: 2;
+		grid-row: 3;
+	}
+}

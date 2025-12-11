@@ -1,0 +1,130 @@
+/* New Skills Layout */
+.skills__container-new {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 4%;
+}
+
+@media screen and (min-width: 968px) {
+    .skills__container-new {
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+    }
+}
+
+/* Infinite Scroll */
+.skills__scroll {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 1rem 0;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.scroll-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    width: max-content;
+}
+
+/* Animations */
+/* Note: The animation duration should be adjusted based on content width if needed */
+.scroll-left {
+    animation: scrollLeft 35s linear infinite;
+}
+
+.scroll-right {
+    animation: scrollRight 35s linear infinite reverse;
+}
+
+.scroll-row:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scrollRight {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Chips */
+.skill-chip {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border-radius: 50px;
+    font-size: var(--small-font-size);
+    color: var(--text-color);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.skill-chip i {
+    font-size: 1rem;
+    color: var(--first-color);
+}
+
+.skill-chip:hover {
+    border-color: var(--first-color);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 15px rgba(var(--first-color-alt-hex), 0.3);
+    /* Assuming var exists or fallback */
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Tooltip (Simple Title on Hover) */
+/* Actually user asked for tooltip OR title. The chip itself is the title. 
+   I will make the hover effect highlight the name brighter. */
+
+/* 3D Container */
+.skills__3d {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+}
+
+#skills-3d-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    outline: none;
+    cursor: move;
+    /* Indicate interactivity */
+}
+
+/* Dark Mode Optimization */
+body.dark-theme .skill-chip {
+    background: rgba(255, 255, 255, 0.03);
+    color: #E5E5E5;
+}
