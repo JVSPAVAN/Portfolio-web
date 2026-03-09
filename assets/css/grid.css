@@ -195,6 +195,7 @@ body.dark-theme .card__box {
 .card__box-category {
 	grid-area: category;
 	color: var(--color-text-grid-white);
+	font-size: 0.75rem;
 }
 
 .card__box>span {
@@ -304,7 +305,8 @@ body.dark-theme .card__box {
 /* Staggered Layout for Portfolio Grid (Desktop) */
 @media screen and (min-width: 768px) {
 	.portfolio-grid {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: repeat(2, 320px);
+		justify-content: center;
 		/* Ensure rows are sized automatically based on content */
 		grid-auto-rows: auto;
 	}
