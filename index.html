@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="assets/css/styles.css?v=7">
     <link rel="stylesheet" href="assets/css/grid.css?v=6">
     <link rel="stylesheet" href="assets/css/skills.css">
-    <link rel="stylesheet" href="assets/css/linkedin-feed.css?v=2">
+    <link rel="stylesheet" href="assets/css/linkedin-feed.css?v=3">
     <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"/>
     <script>document.documentElement.className="js";</script>
 
@@ -702,38 +702,10 @@
         <!--==================== COMMUNITY IMPACT ====================-->
         <section class="community section" id="community">
             <h2 class="section__title">Community <span style="color: var(--first-color)">Impact</span></h2>
-            <span class="section__subtitle">Live insights, mentorship, and tech thoughts from LinkedIn</span>
+            <span class="section__subtitle">Empowering the ecosystem through mentorship and contributions</span>
 
-            <div class="container">
-                <!-- LinkedIn Profile & Follow Header -->
-                <div class="linkedin-community-header">
-                    <div class="linkedin-profile-info">
-                        <div class="linkedin-avatar-wrapper">
-                            <img src="assets/img/Square_Fit_2023212.png" alt="Pavan Kumar" class="linkedin-avatar-img">
-                            <span class="linkedin-badge-icon"><i class="uil uil-linkedin"></i></span>
-                        </div>
-                        <div class="linkedin-profile-text">
-                            <h3>Pavan Kumar <i class="uil uil-check-circle" style="color: #0a66c2; font-size: 1.15rem;"></i></h3>
-                            <span class="linkedin-handle">@pavansoftware</span>
-                            <div class="linkedin-headline">Angular Full Stack Developer | Infosys | Ex-TCS</div>
-                            <div class="linkedin-live-indicator">
-                                <span class="linkedin-pulse-dot"></span>
-                                <span>1,408+ Followers &bull; Live Feed &bull; 5 Latest LinkedIn Posts</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="linkedin-profile-actions">
-                        <a href="https://www.linkedin.com/in/pavansoftware/" target="_blank" rel="noopener noreferrer" class="linkedin-follow-btn">
-                            <i class="uil uil-plus"></i> Follow on LinkedIn
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Dynamic LinkedIn Posts Grid (Latest 5 fetched via API) -->
-                <div class="linkedin-posts-grid" id="community-linkedin-feed">
-                    <!-- Skeletons / Cards dynamically injected by assets/js/linkedin-posts.js -->
-                </div>
+            <div class="community__container container" id="community-linkedin-feed">
+                <!-- Skeletons / Blended cards dynamically injected by assets/js/linkedin-posts.js -->
             </div>
         </section>
         <section class="project section">
@@ -996,7 +968,7 @@
     <script type="module" src="assets/js/grid/main.js?v=21"></script>
 
     <!-- LinkedIn Posts Live Feed Script -->
-    <script src="assets/js/linkedin-posts.js?v=2"></script>
+    <script src="assets/js/linkedin-posts.js?v=3"></script>
 
     <!-- 3D Sphere Carousel Importmap & Script -->
     <script type="importmap">

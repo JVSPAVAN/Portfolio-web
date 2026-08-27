@@ -1,34 +1,31 @@
 /**
  * LinkedIn Posts Feed Engine for Community Impact Section
- * Fetches and displays the latest 5 LinkedIn posts for @pavansoftware
+ * Renders cards with top-half image blending into bottom-half text,
+ * 2-line summary, and hover reveals for reactions, view count, and "View Post" button.
  */
 
 (function () {
-  // Configurable API endpoint (can be swapped for a live webhook or serverless proxy)
   const LINKEDIN_API_ENDPOINT = 'assets/data/linkedin-posts.json';
   const PROFILE_URL = 'https://www.linkedin.com/in/pavansoftware/';
   const ACTIVITY_URL = 'https://www.linkedin.com/in/pavansoftware/recent-activity/all/';
 
   /**
-   * Render loading skeleton cards while fetching
+   * Render loading skeleton cards matching the card structure
    */
-  function renderSkeletons(container, count = 3) {
+  function renderSkeletons(container, count = 2) {
     let html = '';
     for (let i = 0; i < count; i++) {
       html += `
-        <div class="linkedin-skeleton-card">
-          <div class="skeleton-header">
-            <div class="skeleton-avatar skeleton-shimmer"></div>
-            <div class="skeleton-meta">
-              <div class="skeleton-line-title skeleton-shimmer"></div>
-              <div class="skeleton-line-sub skeleton-shimmer"></div>
+        <div class="community__card" style="opacity: 0.7;">
+          <div class="community__img-wrapper skeleton-shimmer" style="height: 190px;"></div>
+          <div class="community__data">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+              <div class="skeleton-shimmer" style="width: 80px; height: 12px; border-radius: 4px;"></div>
+              <div class="skeleton-shimmer" style="width: 50px; height: 12px; border-radius: 4px;"></div>
             </div>
-          </div>
-          <div class="skeleton-banner skeleton-shimmer"></div>
-          <div class="skeleton-text">
-            <div class="skeleton-line skeleton-shimmer"></div>
-            <div class="skeleton-line skeleton-shimmer"></div>
-            <div class="skeleton-line-short skeleton-shimmer"></div>
+            <div class="skeleton-shimmer" style="width: 65%; height: 20px; margin-bottom: 0.75rem; border-radius: 4px;"></div>
+            <div class="skeleton-shimmer" style="width: 100%; height: 14px; margin-bottom: 0.4rem; border-radius: 4px;"></div>
+            <div class="skeleton-shimmer" style="width: 85%; height: 14px; border-radius: 4px;"></div>
           </div>
         </div>
       `;
@@ -37,91 +34,82 @@
   }
 
   /**
-   * Render a single post card HTML
+   * Render a single community post card HTML
    */
   function createPostCardHTML(post) {
-    const totalReactions = (post.metrics?.likes || 0) + (post.metrics?.celebrates || 0) + (post.metrics?.loves || 0);
-    const commentsCount = post.metrics?.comments || 0;
     const postUrl = post.postUrl || ACTIVITY_URL;
+    const likesCount = post.metrics?.likes || 0;
+    const viewsCount = post.metrics?.impressions || '500+';
 
-    // Tags HTML
-    const tagsHTML = (post.tags || [])
-      .map(tag => `<span class="linkedin-tag-badge">${tag}</span>`)
-      .join('');
-
-    // Media Banner or Image HTML
-    let mediaHTML = '';
+    // Top half: Image or gradient with icon
+    let visualHTML = '';
     if (post.image) {
-      mediaHTML = `
-        <div class="linkedin-media-image-container">
-          <img src="${post.image}" alt="${post.imageAlt || 'LinkedIn Post'}" class="linkedin-media-image" loading="lazy">
+      visualHTML = `
+        <div class="community__img-wrapper">
+          <img src="${post.image}" alt="${post.imageAlt || post.title}" class="community__card-img" loading="lazy">
         </div>
       `;
     } else if (post.media && post.media.gradient) {
-      mediaHTML = `
-        <div class="linkedin-media-banner" style="background: ${post.media.gradient}">
-          <i class="uil ${post.media.icon || 'uil-newspaper'} linkedin-media-icon"></i>
-          <span class="linkedin-media-caption">${post.media.caption || 'LinkedIn Update'}</span>
+      visualHTML = `
+        <div class="community__img-wrapper">
+          <div class="community__img-placeholder" style="background: ${post.media.gradient};">
+            <i class="uil ${post.media.icon || 'uil-award'} community__icon-overlay"></i>
+          </div>
         </div>
       `;
-    }
-
-    // Impressions HTML
-    let impressionsHTML = '';
-    if (post.metrics && post.metrics.impressions) {
-      impressionsHTML = `
-        <span class="linkedin-impressions-count" title="${post.metrics.impressions} impressions">
-          <i class="uil uil-chart-line"></i> ${post.metrics.impressions}
-        </span>
+    } else {
+      visualHTML = `
+        <div class="community__img-wrapper">
+          <div class="community__img-placeholder" style="background: linear-gradient(135deg, #1d976c, #93f9b9);">
+            <i class="uil uil-award community__icon-overlay"></i>
+          </div>
+        </div>
       `;
     }
 
     return `
-      <article class="linkedin-post-card" data-id="${post.id}">
-        <div class="linkedin-card-header">
-          <div class="linkedin-card-author">
-            <img src="${post.author.avatar}" alt="${post.author.name}" class="linkedin-author-avatar" onerror="this.src='assets/img/perfil.png'">
-            <div class="linkedin-author-meta">
-              <div class="linkedin-author-name">${post.author.name}</div>
-              <div class="linkedin-author-title">${post.author.headline || 'Angular Full Stack Developer | Infosys | Ex-TCS'}</div>
-              <div class="linkedin-post-time">
-                <i class="uil uil-clock-three"></i> ${post.timestamp}
-              </div>
-            </div>
-          </div>
-          <a href="${PROFILE_URL}" target="_blank" rel="noopener noreferrer" class="linkedin-card-logo" title="View on LinkedIn">
-            <i class="uil uil-linkedin"></i>
-          </a>
-        </div>
+      <div class="community__card">
+        ${visualHTML}
 
-        ${mediaHTML}
-
-        <div class="linkedin-card-body">
-          <p class="linkedin-post-text">${post.content}</p>
-          <div class="linkedin-post-tags">
-            ${tagsHTML}
-          </div>
-        </div>
-
-        <div class="linkedin-card-footer">
-          <div class="linkedin-metrics">
-            <span class="linkedin-reactions-group" title="${totalReactions} total reactions">
-              <span class="linkedin-reaction-icons">
-                <span class="reaction-bubble reaction-like">👍</span>
-                <span class="reaction-bubble reaction-celebrate">👏</span>
-                <span class="reaction-bubble reaction-love">❤️</span>
-              </span>
-              <span>${totalReactions}</span>
+        <div class="community__data">
+          <div class="community__stats">
+            <span class="community__stats-time">
+              <i class="uil uil-clock"></i> ${post.timestamp}
             </span>
-
-            ${impressionsHTML}
+            <span class="community__stats-source">
+              <i class="uil uil-linkedin"></i> LinkedIn
+            </span>
           </div>
 
-          <a href="${postUrl}" target="_blank" rel="noopener noreferrer" class="linkedin-view-btn">
-            View Post <i class="uil uil-external-link-alt"></i>
-          </a>
+          <h3 class="community__title">${post.title}</h3>
+
+          <p class="community__description">
+            ${post.summary || post.content}
+          </p>
+
+          <!-- Hover footer: reactions, views, and View Post button -->
+          <div class="community__hover-footer">
+            <div class="community__metrics">
+              <span class="community__reactions" title="${likesCount} reactions">
+                <span class="reaction-bubbles">
+                  <span class="reaction-bubble reaction-like">👍</span>
+                  <span class="reaction-bubble reaction-celebrate">👏</span>
+                  <span class="reaction-bubble reaction-love">❤️</span>
+                </span>
+                <span>${likesCount}</span>
+              </span>
+
+              <span class="community__views" title="${viewsCount} impressions">
+                <i class="uil uil-eye"></i> ${viewsCount} views
+              </span>
+            </div>
+
+            <a href="${postUrl}" target="_blank" rel="noopener noreferrer" class="community__view-btn">
+              View Post <i class="uil uil-arrow-up-right"></i>
+            </a>
+          </div>
         </div>
-      </article>
+      </div>
     `;
   }
 
@@ -133,15 +121,15 @@
     if (!feedContainer) return;
 
     // Show skeletons while fetching
-    renderSkeletons(feedContainer, 3);
+    renderSkeletons(feedContainer, 2);
 
     try {
-      // Add timestamp query parameter to bypass cache and always fetch fresh on page load
+      // Add timestamp to bypass cache and always fetch fresh on page load
       const cacheBuster = `?t=${new Date().getTime()}`;
       const response = await fetch(LINKEDIN_API_ENDPOINT + cacheBuster);
 
       if (!response.ok) {
-        throw new Error(`Failed to fetch LinkedIn posts (status: ${response.status})`);
+        throw new Error(`Failed to fetch posts (status: ${response.status})`);
       }
 
       const posts = await response.json();
@@ -149,25 +137,22 @@
       if (!Array.isArray(posts) || posts.length === 0) {
         feedContainer.innerHTML = `
           <div style="grid-column: 1 / -1; text-align: center; padding: 2rem; color: var(--text-color-light);">
-            <p>No recent LinkedIn posts found. Check back soon!</p>
+            <p>No recent LinkedIn posts found.</p>
           </div>
         `;
         return;
       }
 
-      // Take the latest 5 posts
+      // Render cards (latest 5 posts)
       const latest5Posts = posts.slice(0, 5);
-
-      // Render cards
       feedContainer.innerHTML = latest5Posts.map(post => createPostCardHTML(post)).join('');
     } catch (error) {
-      console.warn('LinkedIn Feed fetch error:', error);
+      console.warn('LinkedIn feed fetch error:', error);
       feedContainer.innerHTML = `
-        <div style="grid-column: 1 / -1; text-align: center; padding: 2rem; background: var(--container-color); border-radius: 1rem; border: 1px dashed rgba(10,102,194,0.3);">
-          <i class="uil uil-exclamation-triangle" style="font-size: 2rem; color: #f59e0b; margin-bottom: 0.5rem; display: block;"></i>
-          <p style="color: var(--title-color); font-weight: 600; margin-bottom: 0.5rem;">Unable to load live LinkedIn posts right now.</p>
-          <a href="${ACTIVITY_URL}" target="_blank" rel="noopener noreferrer" class="button button--small button--flex" style="background: #0a66c2; margin-top: 0.5rem; display: inline-flex;">
-            View Posts on LinkedIn <i class="uil uil-external-link-alt button__icon"></i>
+        <div style="grid-column: 1 / -1; text-align: center; padding: 2rem; background: var(--container-color); border-radius: 1rem;">
+          <p style="color: var(--title-color); font-weight: 600; margin-bottom: 0.5rem;">Unable to load LinkedIn posts.</p>
+          <a href="${ACTIVITY_URL}" target="_blank" rel="noopener noreferrer" class="button button--small button--flex">
+            View on LinkedIn <i class="uil uil-external-link-alt button__icon"></i>
           </a>
         </div>
       `;

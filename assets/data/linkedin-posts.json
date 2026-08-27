@@ -2,6 +2,8 @@
   {
     "id": "post-1",
     "urn": "urn:li:activity:7210000000000000001",
+    "title": "AI Adoption at Infosys",
+    "summary": "Highlighting Hartford Hub's AI journey, empowering associates to innovate, learn, and deliver transformative value to clients.",
     "author": {
       "name": "Pavan Kumar",
       "headline": "Angular Full Stack Developer | Infosys | Ex-TCS",
@@ -11,7 +13,7 @@
     "timestamp": "2mo ago",
     "date": "2026-06-25",
     "content": "One thing I've genuinely appreciated at Infosys is the strong focus on AI adoption across the organization. As technology continues to evolve, Infosys is actively encouraging associates to learn, innovate, and integrate AI into everyday workflows. The Hartford Hub is leading the AI way, empowering associates and delivering real value to our clients.",
-    "tags": ["#Infosys", "#ArtificialIntelligence", "#Innovation", "#HartfordHub", "#ContinuousLearning", "#AIAdoption"],
+    "tags": ["#Infosys", "#ArtificialIntelligence", "#Innovation", "#HartfordHub"],
     "image": "assets/img/linkedin/post1-ai.png",
     "imageAlt": "Infosys Hartford Hub - Leading the AI way",
     "metrics": {
@@ -25,6 +27,8 @@
   {
     "id": "post-2",
     "urn": "urn:li:activity:7210000000000000002",
+    "title": "Infosys Cricket Tournament",
+    "summary": "Reliving memorable moments from our office cricket tournament—turning pure energy, teamwork, and sportsmanship into lasting bonds.",
     "author": {
       "name": "Pavan Kumar",
       "headline": "Angular Full Stack Developer | Infosys | Ex-TCS",
@@ -34,7 +38,7 @@
     "timestamp": "4mo ago",
     "date": "2026-04-20",
     "content": "Reliving one of the best office memories from last year—our Infosys cricket game 🏏. What started as a casual Infosys Tournament turned into pure energy, teamwork, and a lot of unforgettable moments. Grateful for this amazing team!",
-    "tags": ["#Infosys", "#CricketTournament", "#Teamwork", "#LifeAtInfosys", "#WorkCulture"],
+    "tags": ["#Infosys", "#CricketTournament", "#Teamwork", "#LifeAtInfosys"],
     "image": "assets/img/linkedin/post2-cricket.png",
     "imageAlt": "Infosys Cricket Tournament Team Photos",
     "metrics": {
@@ -48,6 +52,8 @@
   {
     "id": "post-3",
     "urn": "urn:li:activity:7210000000000000003",
+    "title": "Architecture of Connection",
+    "summary": "Exploring how engineering scalable digital platforms transcends technology to cultivate authentic collaboration and human connection.",
     "author": {
       "name": "Pavan Kumar",
       "headline": "Angular Full Stack Developer | Infosys | Ex-TCS",
@@ -60,9 +66,9 @@
     "tags": ["#SoftwareArchitecture", "#Engineering", "#TechThoughts", "#DigitalPlatforms"],
     "media": {
       "type": "gradient",
-      "gradient": "linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)",
-      "icon": "uil-circuit",
-      "caption": "The Architecture of Connection: Beyond the Platform"
+      "gradient": "linear-gradient(45deg, #2b32b2, #1488cc)",
+      "icon": "uil-github",
+      "caption": "The Architecture of Connection"
     },
     "metrics": {
       "likes": 2,
@@ -75,6 +81,8 @@
   {
     "id": "post-4",
     "urn": "urn:li:activity:7210000000000000004",
+    "title": "Hartford Office Community Day",
+    "summary": "Celebrating team milestones, shared smiles, and creating a supportive, positive culture in our Infosys Hartford office.",
     "author": {
       "name": "Pavan Kumar",
       "headline": "Angular Full Stack Developer | Infosys | Ex-TCS",
@@ -84,7 +92,7 @@
     "timestamp": "6mo ago",
     "date": "2026-02-05",
     "content": "Throwback: Small Smiles, Big Impact!\n\nA look back at a wonderful day in our Infosys Hartford office celebrating together, building friendships, and creating positive energy across our teams.",
-    "tags": ["#Infosys", "#HartfordOffice", "#TeamCelebration", "#LifeAtInfosys"],
+    "tags": ["#Infosys", "#HartfordOffice", "#TeamCelebration", "#Culture"],
     "image": "assets/img/linkedin/post4-office.png",
     "imageAlt": "Infosys Hartford Office Celebration",
     "metrics": {
@@ -98,6 +106,8 @@
   {
     "id": "post-5",
     "urn": "urn:li:activity:7210000000000000005",
+    "title": "Exploring New Opportunities",
+    "summary": "Reflecting on 8+ years of engineering milestones, expanding Angular full-stack mastery, and driving cloud solutions.",
     "author": {
       "name": "Pavan Kumar",
       "headline": "Angular Full Stack Developer | Infosys | Ex-TCS",
@@ -110,9 +120,9 @@
     "tags": ["#CareerGrowth", "#FullStackDeveloper", "#Angular", "#NewOpportunities"],
     "media": {
       "type": "gradient",
-      "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
-      "icon": "uil-rocket",
-      "caption": "Excited to Explore New Opportunities!"
+      "gradient": "linear-gradient(135deg, #1d976c, #93f9b9)",
+      "icon": "uil-award",
+      "caption": "Excited to Explore New Opportunities"
     },
     "metrics": {
       "likes": 12,
