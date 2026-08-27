@@ -97,14 +97,15 @@ body.dark-theme .portfolio-grid .card__img {
 .card__box {
 	opacity: 0;
 	z-index: 2;
-	padding: 1rem;
+	padding: clamp(0.4rem, 1.2vw, 0.65rem);
 	display: flex;
 	position: relative;
 	overflow: hidden;
 	flex-direction: column;
 	background-color: rgba(255, 255, 255, .15);
 	backdrop-filter: blur(5px);
-	gap: 2rem;
+	justify-content: space-between;
+	gap: 0.25rem;
 }
 
 body.dark-theme .card__box {
@@ -167,43 +168,80 @@ body.dark-theme .card__box {
 }
 
 .card__box-number {
-	font-size: clamp(2rem, 5vw, 3.5rem);
+	font-size: clamp(1.5rem, 3.2vw, 2.5rem);
 	font-family: var(--body-font);
 	font-weight: 200;
-	line-height: 0.8;
-	grid-area: number;
+	line-height: 1;
 	color: var(--color-text-grid-primary);
+	overflow: visible !important;
+	margin: 0;
+	padding: 0;
+}
+
+.card__box-number .char {
+	display: inline-block;
+	line-height: inherit;
+	overflow: visible;
 }
 
 .card__box--alt {
 	color: var(--color-text-grid-alt);
 }
 
-.card__box-tags,
-.card__box-category {
-	font-size: 0.85rem;
-	font-weight: 600;
+.card__box .d-flex.flex-column {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: flex-end;
+	width: 100%;
 	margin-top: auto;
+	line-height: 1.2;
+	gap: 2px;
+	z-index: 2;
 }
 
 .card__box-tags {
-	grid-area: tags;
-	font-size: 0.65rem;
+	font-size: clamp(0.52rem, 1vw, 0.62rem);
 	color: var(--color-text-grid-white);
+	white-space: nowrap;
+	line-height: 1.2;
+	display: block;
+	opacity: 0.92;
+	margin: 0;
+	text-align: right;
 }
 
 .card__box-category {
-	grid-area: category;
 	color: var(--color-text-grid-white);
-	font-size: 0.75rem;
+	font-size: clamp(0.58rem, 1.15vw, 0.72rem);
+	font-weight: 600;
+	letter-spacing: -0.2px;
+	white-space: nowrap;
+	line-height: 1.2;
+	display: block;
+	overflow: visible;
+	margin: 0;
+	text-align: right;
+	max-width: 100%;
+}
+
+.card__box-category .char {
+	display: inline-block;
+	line-height: inherit;
+	overflow: visible;
+	will-change: opacity, transform;
+}
+
+.card__box-category .whitespace {
+	display: inline-block;
+	width: 0.25em;
 }
 
 .card__box>span {
 	display: inline-block;
 	position: relative;
-	overflow: hidden;
+	overflow: visible;
 }
-
 
 /* Utility Classes */
 .d-flex {
@@ -226,14 +264,16 @@ body.dark-theme .card__box {
 .card__box-buttons {
 	display: flex;
 	flex-direction: column;
-	gap: 1.2rem;
-	align-items: flex-end;
+	gap: clamp(0.5rem, 1.5vw, 1rem);
+	align-items: center;
+	justify-content: center;
 	z-index: 10;
+	width: 100%;
 }
 
 .card__box-buttons a.button {
-	padding: 0.5rem 0;
-	font-size: 0.8rem;
+	padding: 0.45rem 0.25rem;
+	font-size: clamp(0.7rem, 1.5vw, 0.8rem);
 	font-weight: var(--font-medium);
 	color: var(--first-color);
 	background: transparent;
@@ -241,7 +281,7 @@ body.dark-theme .card__box {
 	text-align: center;
 	text-decoration: none;
 	transition: all 0.3s ease;
-	width: 120px;
+	width: clamp(80px, 18vw, 115px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -302,36 +342,53 @@ body.dark-theme .card__box {
 	--mask-grad: linear-gradient(45deg, transparent var(--cut-size), #fff 0);
 }
 
-/* Staggered Layout for Portfolio Grid (Desktop) */
-@media screen and (min-width: 768px) {
+/* Staggered 2-Column Layout for Portfolio Grid (>= 680px) */
+@media screen and (min-width: 680px) {
 	.portfolio-grid {
-		grid-template-columns: repeat(2, 320px);
-		justify-content: center;
-		/* Ensure rows are sized automatically based on content */
-		grid-auto-rows: auto;
+		grid-template-columns: repeat(2, 320px) !important;
+		justify-content: center !important;
+		grid-auto-rows: auto !important;
+		gap: 2rem !important;
 	}
 
 	/* 1st Portfolio: Row 1, Col 1 */
 	.portfolio-grid .card:nth-of-type(1) {
-		grid-column: 1;
-		grid-row: 1;
+		grid-column: 1 !important;
+		grid-row: 1 !important;
 	}
 
 	/* 2nd Portfolio: Row 2, Col 1 */
 	.portfolio-grid .card:nth-of-type(2) {
-		grid-column: 1;
-		grid-row: 2;
+		grid-column: 1 !important;
+		grid-row: 2 !important;
 	}
 
 	/* 3rd Portfolio: Row 2, Col 2 */
 	.portfolio-grid .card:nth-of-type(3) {
-		grid-column: 2;
-		grid-row: 2;
+		grid-column: 2 !important;
+		grid-row: 2 !important;
 	}
 
 	/* 4th Portfolio: Row 3, Col 2 */
 	.portfolio-grid .card:nth-of-type(4) {
-		grid-column: 2;
-		grid-row: 3;
+		grid-column: 2 !important;
+		grid-row: 3 !important;
+	}
+}
+
+/* Centered Single Column Layout for Smaller Screens (< 680px) */
+@media screen and (max-width: 679px) {
+	.portfolio-grid {
+		display: flex !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		gap: 2rem !important;
+		width: 100% !important;
+	}
+
+	.portfolio-grid .card {
+		width: min(320px, 92vw) !important;
+		aspect-ratio: 1 !important;
+		margin: 0 auto !important;
 	}
 }

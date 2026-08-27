@@ -96,10 +96,22 @@ export class Card {
         return this.cardBoxesArr.map(box => box.DOM.el).filter(el => el);
     }
     get cardBoxNumberChars() {
-        return this.cardBoxesArr.map(box => box.DOM.numberChars).filter(chars => chars);
+        const chars = [];
+        this.cardBoxesArr.forEach(box => {
+            if (box.DOM.numberChars) {
+                box.DOM.numberChars.forEach(c => chars.push(c));
+            }
+        });
+        return chars;
     }
     get cardBoxCategoryChars() {
-        return this.cardBoxesArr.map(box => box.DOM.categoryChars).filter(chars => chars);
+        const chars = [];
+        this.cardBoxesArr.forEach(box => {
+            if (box.DOM.categoryChars) {
+                box.DOM.categoryChars.forEach(c => chars.push(c));
+            }
+        });
+        return chars;
     }
     
     /**
@@ -110,6 +122,21 @@ export class Card {
         const mouseLeaveFn = event => this.leave(event);
         this.DOM.el.addEventListener('mouseenter', mouseenterFn);
         this.DOM.el.addEventListener('mouseleave', mouseLeaveFn);
+
+        // Tap/click interaction for touch and smaller resolution screens
+        let isCardActive = false;
+        this.DOM.el.addEventListener('click', (event) => {
+            // Allow direct clicking on Demo or Repo buttons without toggling off
+            if (event.target.closest('a.button')) return;
+
+            if (!isCardActive) {
+                this.enter(event);
+                isCardActive = true;
+            } else {
+                this.leave(event);
+                isCardActive = false;
+            }
+        });
     }
 
     isDarkMode() {

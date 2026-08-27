@@ -98,33 +98,31 @@ const initSkills3D = () => {
             radius: 50,
             speed: 0.002,
             skills: [
-                { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-                { name: "Angular", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
-                { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" }
+                { name: "React", icon: "assets/img/skills/react.svg" },
+                { name: "Angular", icon: "assets/img/skills/angular.svg" },
+                { name: "Node.js", icon: "assets/img/skills/nodejs.svg" }
             ]
         },
         {
             radius: 80,
             speed: 0.0015,
             skills: [
-                { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
-                { name: "Spring", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" },
-                { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-                { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" }
+                { name: "Java", icon: "assets/img/skills/java.svg" },
+                { name: "Spring", icon: "assets/img/skills/spring.svg" },
+                { name: "Python", icon: "assets/img/skills/python.svg" },
+                { name: "MongoDB", icon: "assets/img/skills/mongodb.svg" }
             ]
         },
         {
             radius: 110,
             speed: 0.001,
             skills: [
-                { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
-                { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
-                { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" }
+                { name: "AWS", icon: "assets/img/skills/aws.svg" },
+                { name: "Docker", icon: "assets/img/skills/docker.svg" },
+                { name: "Git", icon: "assets/img/skills/git.svg" }
             ]
         }
     ];
-
-    const textureLoader = new THREE.TextureLoader();
 
     // Helper: Orbit Line
     const createOrbit = (radius) => {
@@ -147,13 +145,48 @@ const initSkills3D = () => {
         return orbit;
     };
 
-    // Helper: Icon Sprite
-    const createIconSprite = (url) => {
-        const map = textureLoader.load(url);
-        map.minFilter = THREE.LinearFilter;
-        const material = new THREE.SpriteMaterial({ map: map, transparent: true });
+    // Helper: Icon Sprite (Rasterized on 2D canvas for guaranteed WebGL support without black boxes)
+    const createIconSprite = (url, fallbackName) => {
+        const canvas = document.createElement('canvas');
+        canvas.width = 128;
+        canvas.height = 128;
+        const ctx = canvas.getContext('2d');
+
+        const texture = new THREE.CanvasTexture(canvas);
+        texture.minFilter = THREE.LinearFilter;
+        texture.magFilter = THREE.LinearFilter;
+
+        const material = new THREE.SpriteMaterial({ 
+            map: texture, 
+            transparent: true,
+            depthWrite: false
+        });
         const sprite = new THREE.Sprite(material);
         sprite.scale.set(14, 14, 1); 
+
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.onload = () => {
+            ctx.clearRect(0, 0, 128, 128);
+            ctx.drawImage(img, 0, 0, 128, 128);
+            texture.needsUpdate = true;
+        };
+        img.onerror = () => {
+            // Draw a neat fallback badge
+            ctx.clearRect(0, 0, 128, 128);
+            ctx.fillStyle = '#ffaa00';
+            ctx.beginPath();
+            ctx.arc(64, 64, 56, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = '#111';
+            ctx.font = 'bold 36px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(fallbackName ? fallbackName.substring(0, 3) : '?', 64, 64);
+            texture.needsUpdate = true;
+        };
+        img.src = url;
+
         return sprite;
     };
 
@@ -242,7 +275,7 @@ const initSkills3D = () => {
             const skillGroup = new THREE.Group();
             solarSystem.add(skillGroup);
 
-            const icon = createIconSprite(skill.icon);
+            const icon = createIconSprite(skill.icon, skill.name);
             skillGroup.add(icon);
             raycastTargets.push(icon);
 

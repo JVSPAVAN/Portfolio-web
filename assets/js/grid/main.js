@@ -1,6 +1,6 @@
 // Importing the necessary functions and classes from other modules.
 import { preloadImages } from './utils.js'; // Utility function to preload images
-import { Card } from './card.js?v=19';          // Unified Card class for dynamic effects
+import { Card } from './card.js?v=21';          // Unified Card class for dynamic effects
 
 // Array to hold the instantiated card objects.
 let cardsArr = [];
