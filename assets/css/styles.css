@@ -1271,76 +1271,7 @@ body.dark-theme .services__content--3 .services__item-icon-wrapper { background:
 }
 
 /*==================== COMMUNITY IMPACT ====================*/
-.community__container {
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.community__card {
-  background-color: var(--container-color);
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-  transition: .4s;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.community__card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-}
-
-.community__img-wrapper {
-  position: relative;
-  height: 160px;
-  width: 100%;
-}
-
-.community__img-placeholder {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #1d976c, #93f9b9);
-  /* Greenish default */
-}
-
-.community__icon-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 3.5rem;
-  color: rgba(255, 255, 255, 0.9);
-  z-index: 10;
-}
-
-.community__data {
-  padding: 1.5rem;
-  flex-grow: 1;
-}
-
-.community__stats {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  column-gap: .5rem;
-  font-size: var(--smaller-font-size);
-  font-weight: var(--font-semi-bold);
-  color: var(--first-color);
-  margin-bottom: 1rem;
-}
-
-.community__title {
-  font-size: var(--h3-font-size);
-  margin-bottom: .75rem;
-}
-
-.community__description {
-  font-size: var(--small-font-size);
-  color: var(--text-color-light);
-  line-height: 1.6;
-}
+/* Modernized styles managed in assets/css/linkedin-feed.css */
 
 /*==================== PROJECT IN MIND ====================*/
 .project {

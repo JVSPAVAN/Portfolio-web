@@ -1,20 +1,23 @@
 [
   {
     "id": "post-1",
-    "urn": "urn:li:activity:7210000000000000001",
+    "urn": "urn:li:activity:7466215645454454784",
     "title": "AI Adoption at Infosys",
     "summary": "Highlighting Hartford Hub's AI journey, empowering associates to innovate, learn, and deliver transformative value to clients.",
     "author": {
       "name": "Pavan Kumar",
       "headline": "Angular Full Stack Developer | Infosys | Ex-TCS",
-      "avatar": "assets/img/Square_Fit_2023212.png",
+      "avatar": "https://media.licdn.com/dms/image/v2/D5603AQHLibQN9x0BKQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1696011844908?e=1789603200&v=beta&t=Qpv0V-qtor8VbhweJHJe87zA_ErvSLrDG6AAgaEKmF4",
       "profileUrl": "https://www.linkedin.com/in/pavansoftware/"
     },
     "timestamp": "2mo ago",
-    "date": "2026-06-25",
+    "date": "2026-05-29",
     "content": "One thing I've genuinely appreciated at Infosys is the strong focus on AI adoption across the organization. As technology continues to evolve, Infosys is actively encouraging associates to learn, innovate, and integrate AI into everyday workflows. The Hartford Hub is leading the AI way, empowering associates and delivering real value to our clients.",
     "tags": ["#Infosys", "#ArtificialIntelligence", "#Innovation", "#HartfordHub"],
-    "image": "assets/img/linkedin/post1-ai.png",
+    "image": "https://media.licdn.com/dms/image/v2/D4E22AQFdrqI7ywupJw/feedshare-image-high-res/B4EZ51TkRAK0AU-/0/1780084524430?e=1789603200&v=beta&t=7Fe3Hjegae44uxRO1UfnLcF7M9kmV_QIX2Ili1WGXkc",
+    "images": [
+      "https://media.licdn.com/dms/image/v2/D4E22AQFdrqI7ywupJw/feedshare-image-high-res/B4EZ51TkRAK0AU-/0/1780084524430?e=1789603200&v=beta&t=7Fe3Hjegae44uxRO1UfnLcF7M9kmV_QIX2Ili1WGXkc"
+    ],
     "imageAlt": "Infosys Hartford Hub - Leading the AI way",
     "metrics": {
       "likes": 16,
@@ -22,24 +25,33 @@
       "reposts": 0,
       "impressions": "532"
     },
-    "postUrl": "https://www.linkedin.com/in/pavansoftware/recent-activity/all/"
+    "postUrl": "https://www.linkedin.com/posts/pavansoftware_infosys-artificialintelligence-generativeai-activity-7466215645454454784-zx4Q"
   },
   {
     "id": "post-2",
-    "urn": "urn:li:activity:7210000000000000002",
+    "urn": "urn:li:ugcPost:7453097870687367170",
     "title": "Infosys Cricket Tournament",
     "summary": "Reliving memorable moments from our office cricket tournament—turning pure energy, teamwork, and sportsmanship into lasting bonds.",
     "author": {
       "name": "Pavan Kumar",
       "headline": "Angular Full Stack Developer | Infosys | Ex-TCS",
-      "avatar": "assets/img/Square_Fit_2023212.png",
+      "avatar": "https://media.licdn.com/dms/image/v2/D5603AQHLibQN9x0BKQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1696011844908?e=1789603200&v=beta&t=Qpv0V-qtor8VbhweJHJe87zA_ErvSLrDG6AAgaEKmF4",
       "profileUrl": "https://www.linkedin.com/in/pavansoftware/"
     },
     "timestamp": "4mo ago",
-    "date": "2026-04-20",
+    "date": "2026-04-23",
     "content": "Reliving one of the best office memories from last year—our Infosys cricket game 🏏. What started as a casual Infosys Tournament turned into pure energy, teamwork, and a lot of unforgettable moments. Grateful for this amazing team!",
     "tags": ["#Infosys", "#CricketTournament", "#Teamwork", "#LifeAtInfosys"],
-    "image": "assets/img/linkedin/post2-cricket.png",
+    "image": "https://media.licdn.com/dms/image/v2/D4E22AQFVQfo5WZhEFw/feedshare-image-high-res/B4EZ2645jCJ0AU-/0/1776956972048?e=1789603200&v=beta&t=o3mWbbcFYsCze04Ml7GTkka4TBbMl_BI3d1LJIQNqMk",
+    "images": [
+      "https://media.licdn.com/dms/image/v2/D4E22AQFVQfo5WZhEFw/feedshare-image-high-res/B4EZ2645jCJ0AU-/0/1776956972048?e=1789603200&v=beta&t=o3mWbbcFYsCze04Ml7GTkka4TBbMl_BI3d1LJIQNqMk",
+      "https://media.licdn.com/dms/image/v2/D4E22AQEmTggz3FZIPg/feedshare-image-high-res/B4EZ2645XaIAAY-/0/1776956970772?e=1789603200&v=beta&t=qpr4uy_qeOJqJUdsLo9f8iyfLRDx8oZmPV4NmtG4p3g",
+      "https://media.licdn.com/dms/image/v2/D4E22AQGDBE-R_xtICQ/feedshare-image-high-res/B4EZ264_djJMAA-/0/1776956997575?e=1789603200&v=beta&t=49-RFbL_CUQFRWZkBrUipEDVHxEIEIjxVX9omCl5WFI",
+      "https://media.licdn.com/dms/image/v2/D4E22AQGNs9XucDgYlg/feedshare-image-high-res/B4EZ264.C1JUAU-/0/1776956991246?e=1789603200&v=beta&t=hO1NKOKH_a8ICXWg1XAI1aT14qo26gdx0yOEF8YT95U",
+      "https://media.licdn.com/dms/image/v2/D4E22AQFWpOBvXYkujA/feedshare-image-high-res/B4EZ265AsKIMAU-/0/1776957002513?e=1789603200&v=beta&t=9j5qYNi17ytRUZApzlyJwjnwW8SX8bCDOTv2noxr4LM",
+      "https://media.licdn.com/dms/image/v2/D4E22AQG9oq7np1dC8w/feedshare-image-high-res/B4EZ265AuMIwAU-/0/1776957002883?e=1789603200&v=beta&t=VRjuJGu3R701fgRKiI6S2V-AzGw5bT5RSPvP6lmrxJc",
+      "https://media.licdn.com/dms/image/v2/D4E22AQEfnWvKIIaSiw/feedshare-image-high-res/B4EZ264.4XJoAU-/0/1776956995502?e=1789603200&v=beta&t=qCxHzdvMBe8qXtiRSmX1b_3-2MwPY_kIs2KhMVGy1I8"
+    ],
     "imageAlt": "Infosys Cricket Tournament Team Photos",
     "metrics": {
       "likes": 22,
@@ -47,22 +59,22 @@
       "reposts": 0,
       "impressions": "1,723"
     },
-    "postUrl": "https://www.linkedin.com/in/pavansoftware/recent-activity/all/"
+    "postUrl": "https://www.linkedin.com/posts/pavansoftware_infosys-workplaceculture-cricket-activity-7453097871907942401-8yVK"
   },
   {
     "id": "post-3",
-    "urn": "urn:li:activity:7210000000000000003",
+    "urn": "urn:li:activity:7432575136719024131",
     "title": "Architecture of Connection",
     "summary": "Exploring how engineering scalable digital platforms transcends technology to cultivate authentic collaboration and human connection.",
     "author": {
       "name": "Pavan Kumar",
       "headline": "Angular Full Stack Developer | Infosys | Ex-TCS",
-      "avatar": "assets/img/Square_Fit_2023212.png",
+      "avatar": "https://media.licdn.com/dms/image/v2/D5603AQHLibQN9x0BKQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1696011844908?e=1789603200&v=beta&t=Qpv0V-qtor8VbhweJHJe87zA_ErvSLrDG6AAgaEKmF4",
       "profileUrl": "https://www.linkedin.com/in/pavansoftware/"
     },
     "timestamp": "6mo ago",
-    "date": "2026-02-15",
-    "content": "The Architecture of Connection: Beyond the Platform\n\n\"Where does a person truly begin, and where do they end?\"\n\nA deeper look at how engineering robust digital platforms transcends technology to build meaningful human connections and collaboration.",
+    "date": "2026-02-26",
+    "content": "Where does a person truly begin, and where do they end? A deeper look at how engineering robust, scalable digital platforms transcends technology to cultivate authentic human connection, collaborative ecosystems, and organizational agility.",
     "tags": ["#SoftwareArchitecture", "#Engineering", "#TechThoughts", "#DigitalPlatforms"],
     "media": {
       "type": "gradient",
@@ -76,24 +88,32 @@
       "reposts": 0,
       "impressions": "545"
     },
-    "postUrl": "https://www.linkedin.com/in/pavansoftware/recent-activity/all/"
+    "postUrl": "https://www.linkedin.com/posts/pavansoftware_humanconnection-digitalphilosophy-leadership-activity-7432575136719024131-odKn"
   },
   {
     "id": "post-4",
-    "urn": "urn:li:activity:7210000000000000004",
+    "urn": "urn:li:ugcPost:7432475160571588608",
     "title": "Hartford Office Community Day",
     "summary": "Celebrating team milestones, shared smiles, and creating a supportive, positive culture in our Infosys Hartford office.",
     "author": {
       "name": "Pavan Kumar",
       "headline": "Angular Full Stack Developer | Infosys | Ex-TCS",
-      "avatar": "assets/img/Square_Fit_2023212.png",
+      "avatar": "https://media.licdn.com/dms/image/v2/D5603AQHLibQN9x0BKQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1696011844908?e=1789603200&v=beta&t=Qpv0V-qtor8VbhweJHJe87zA_ErvSLrDG6AAgaEKmF4",
       "profileUrl": "https://www.linkedin.com/in/pavansoftware/"
     },
     "timestamp": "6mo ago",
-    "date": "2026-02-05",
+    "date": "2026-02-25",
     "content": "Throwback: Small Smiles, Big Impact!\n\nA look back at a wonderful day in our Infosys Hartford office celebrating together, building friendships, and creating positive energy across our teams.",
     "tags": ["#Infosys", "#HartfordOffice", "#TeamCelebration", "#Culture"],
-    "image": "assets/img/linkedin/post4-office.png",
+    "image": "https://media.licdn.com/dms/image/v2/D4E22AQFa-xqOQ9TwRA/feedshare-image-high-res/B4EZyV0ufUJ8AY-/0/1772040153824?e=1789603200&v=beta&t=dirxSyHA18-AYuFkdN--C6PV9jzl6PjfZCsE5T2S0pE",
+    "images": [
+      "https://media.licdn.com/dms/image/v2/D4E22AQFa-xqOQ9TwRA/feedshare-image-high-res/B4EZyV0ufUJ8AY-/0/1772040153824?e=1789603200&v=beta&t=dirxSyHA18-AYuFkdN--C6PV9jzl6PjfZCsE5T2S0pE",
+      "https://media.licdn.com/dms/image/v2/D4E22AQHfyRIxI8JyEA/feedshare-image-high-res/B4EZyV0w.XGkAU-/0/1772040164534?e=1789603200&v=beta&t=xjqIim-a81sH-lY278X1fDb1XJxGqmYzQ247BWJW2mo",
+      "https://media.licdn.com/dms/image/v2/D4E22AQFlMaHi3HE-vQ/feedshare-image-high-res/B4EZyV0weZJ8AY-/0/1772040162303?e=1789603200&v=beta&t=aqH2Dx52fj5GuBqD3qShyBbwFjyW5_--rpFZlMltkFA",
+      "https://media.licdn.com/dms/image/v2/D4E22AQEFYL3zQ6FjMA/feedshare-image-high-res/B4EZyV0uB8KIAU-/0/1772040151981?e=1789603200&v=beta&t=lo35LZtpGHodPOqhLwHojwV5u1iXeIzxluDh-gTP-F8",
+      "https://media.licdn.com/dms/image/v2/D4E22AQFFsAn10ljfQg/feedshare-image-high-res/B4EZyV0vtCGkAU-/0/1772040159288?e=1789603200&v=beta&t=RzgwSeSx-s_eUcWvKhrxi8hfo4NzRWe-1-h0UVn9uY8",
+      "https://media.licdn.com/dms/image/v2/D4E22AQHZDYoses97qw/feedshare-image-high-res/B4EZyV0tSpIQAY-/0/1772040148843?e=1789603200&v=beta&t=5oBJC8ZPvCmU2k9Tv83YI5qXLdB5v_e9boYkWAHhz6U"
+    ],
     "imageAlt": "Infosys Hartford Office Celebration",
     "metrics": {
       "likes": 52,
@@ -101,22 +121,22 @@
       "reposts": 0,
       "impressions": "2,642"
     },
-    "postUrl": "https://www.linkedin.com/in/pavansoftware/recent-activity/all/"
+    "postUrl": "https://www.linkedin.com/posts/pavansoftware_myphotography-infosys-hartford-activity-7432475161515155456-wewy"
   },
   {
     "id": "post-5",
-    "urn": "urn:li:activity:7210000000000000005",
+    "urn": "urn:li:ugcPost:7245111477408342021",
     "title": "Exploring New Opportunities",
     "summary": "Reflecting on 8+ years of engineering milestones, expanding Angular full-stack mastery, and driving cloud solutions.",
     "author": {
       "name": "Pavan Kumar",
       "headline": "Angular Full Stack Developer | Infosys | Ex-TCS",
-      "avatar": "assets/img/Square_Fit_2023212.png",
+      "avatar": "https://media.licdn.com/dms/image/v2/D5603AQHLibQN9x0BKQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1696011844908?e=1789603200&v=beta&t=Qpv0V-qtor8VbhweJHJe87zA_ErvSLrDG6AAgaEKmF4",
       "profileUrl": "https://www.linkedin.com/in/pavansoftware/"
     },
     "timestamp": "1yr ago",
-    "date": "2025-08-10",
-    "content": "Excited to Explore New Opportunities!\n\nHello everyone, reflecting on key engineering milestones, sharpening full-stack enterprise patterns, and looking forward to driving high-impact software solutions.",
+    "date": "2024-09-26",
+    "content": "Excited to explore new engineering opportunities! Reflecting on 8+ years of engineering milestones, architecting scalable full-stack applications, and driving high-impact software solutions with collaborative, forward-thinking teams.",
     "tags": ["#CareerGrowth", "#FullStackDeveloper", "#Angular", "#NewOpportunities"],
     "media": {
       "type": "gradient",
@@ -130,6 +150,6 @@
       "reposts": 0,
       "impressions": "1,473"
     },
-    "postUrl": "https://www.linkedin.com/in/pavansoftware/recent-activity/all/"
+    "postUrl": "https://www.linkedin.com/posts/pavansoftware_opentowork-jobsearch-softwareengineer-activity-7245111478402387968-ybAx"
   }
 ]

@@ -21,13 +21,22 @@ const BASE_DATA = [
         img: "assets/img/1689937773702.jpeg", 
         text: "The first thing that springs to mind when I think of Pavan is \"exceptionally versatile\". At Tata Consultancy Services, I had the pleasure of working with him for three years. His versatility particularly amazed me. First trained as a front-end developer. He always finds a clever solution to finish challenging jobs on schedule. When a need arose, he was prepared to work on the backend development, and soon everyone on the team looked to him for guidance and problem-solving. He constantly has fresh ideas, which most of the time helps the team be more productive. He is a really extroverted individual that is a breeze to work with. Pavan has earned my highest endorsement as a leader.He would be valuable to any team.", 
         author: "Pavithra Seshadri", 
+        title: "Senior Digital Architect, TCS",
         stars: 5 
     },
     { 
         img: "assets/img/1605525460699.jpeg", 
         text: "Pavan's exceptional contributions as a Full Stack Developer at TCS over three years. His dedication, passion, and extraordinary skills have been nothing short of remarkable. His technical prowess and ability to tackle complex challenges with ease have consistently impressed not only his peers but also our clients and stakeholders. His attention to detail and commitment to delivering high-quality code have played a pivotal role in the success of numerous projects.", 
         author: "Geeta Rajput", 
+        title: "Lead, TCS",
         stars: 4 
+    },
+    { 
+        img: "assets/img/testimonial2.jpg", 
+        text: "Recommending Pavan Kumar for Full Stack Developer. Exceptional problem-solving mindset, strong technical foundation across modern frontend and backend architectures, and a collaborative team player who drives high-impact software delivery.", 
+        author: "Bhanuteja C", 
+        title: "Full Stack Developer",
+        stars: 5 
     }
 ];
 
@@ -53,38 +62,18 @@ const cardVectors = [];
 
 async function fetchLinkedInRecommendations() {
     try {
-        // NOTE: Calling LinkedIn API from front-end usually encounters CORS blocks.
-        // It's recommended to route this via a backend API. 
-        // Replace 'YOUR_LINKEDIN_ACCESS_TOKEN' with your valid OAuth token.
-        const token = "AQXB6qpl1ZiWJ47R9sqqAMWSy4TO1Yf_9XXLx5e9tWJTMYLFPW4lAExZ5LwyRlMZuGqG4yvGg6HZVc4ik7IdZDQx4AajjD99kWAVZo4Eg_M3i2Ku9muMq8R3s96oAFG0ILI1FHeb8ibAD50lGLtbOi395tpz1xV--d3ukLQUjYXSDI0v8EmTjpgH7R-5l9-PdyxacHNnRIPemlUEhG0phvHPxSB_p_FACZ1de9fV2YS6oiBffC_vNfMI6mEOVojTEgszV7VJMNijFB-S4RivoESVr5d5WlYYMmUdwaIKTC31tf2On7W4ziGzPZo7e7B63vH5YQCUJLmFCQAeA3pmi1rt_oY9Qw"; 
-        
-        const linkedinUrl = "https://api.linkedin.com/v2/recommendation?q=recipient&statusFilters=List(VISIBLE)";
-        
-        const response = await fetch(linkedinUrl, {
-            method: "GET",
-            headers: {
-                "Authorization": `Bearer ${token}`,
-                "X-Restli-Protocol-Version": "2.0.0"
-            }
-        });
-        
+        // Fetch recommendations combining existing defaults with live LinkedIn Apify data
+        const response = await fetch('assets/data/linkedin-recommendations.json?t=' + Date.now());
         if (response.ok) {
             const data = await response.json();
-            if (data.elements && data.elements.length > 0) {
-                return data.elements.map(item => ({
-                    text: item.recommendationText || "",
-                    author: "LinkedIn Connection", // LinkedIn API requires a separate request by URN to get names/pics
-                    img: "assets/img/1605525460699.jpeg", // Default avatar placeholder
-                    stars: 5 
-                }));
+            if (Array.isArray(data) && data.length > 0) {
+                return data;
             }
-        } else {
-            console.warn("LinkedIn API returned status:", response.status);
         }
     } catch (e) {
-        console.warn("LinkedIn API request failed (likely CORS or missing token), using fallback.", e);
+        console.warn("Could not load recommendations JSON, using defaults:", e);
     }
-    return null;
+    return BASE_DATA;
 }
 
 // --- SCENE SETUP ---
@@ -270,8 +259,20 @@ async function initCards() {
     const apiData = await fetchLinkedInRecommendations();
     const sourceData = apiData || BASE_DATA;
     
-    // Create 3 sets of data and shuffle them so neighbors are randomized and the sphere is full
-    DATA = shuffleArray([...sourceData, ...sourceData, ...sourceData]).map((item, index) => ({
+    // Enforce max of 2 repetitions per person in Testimonials
+    const duplicatedData = [...sourceData, ...sourceData];
+    const authorCounts = {};
+    const cappedData = [];
+
+    for (const item of duplicatedData) {
+        const authorKey = item.author || item.name || 'default';
+        authorCounts[authorKey] = (authorCounts[authorKey] || 0) + 1;
+        if (authorCounts[authorKey] <= 2) {
+            cappedData.push(item);
+        }
+    }
+
+    DATA = shuffleArray(cappedData).map((item, index) => ({
         ...item,
         uniqueId: index 
     }));

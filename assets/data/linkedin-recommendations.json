@@ -1,0 +1,35 @@
+[
+  {
+    "id": "rec-1",
+    "author": "Pavithra Seshadri",
+    "title": "Senior Digital Architect, TCS",
+    "img": "assets/img/1689937773702.jpeg",
+    "text": "The first thing that springs to mind when I think of Pavan is \"exceptionally versatile\". At Tata Consultancy Services, I had the pleasure of working with him for three years. His versatility particularly amazed me. First trained as a front-end developer. He always finds a clever solution to finish challenging jobs on schedule. When a need arose, he was prepared to work on the backend development, and soon everyone on the team looked to him for guidance and problem-solving. He constantly has fresh ideas, which most of the time helps the team be more productive. He is a really extroverted individual that is a breeze to work with. Pavan has earned my highest endorsement as a leader. He would be valuable to any team.",
+    "stars": 5,
+    "date": "May 31, 2023",
+    "relationship": "Senior to Pavan at TCS",
+    "source": "LinkedIn Recommendation"
+  },
+  {
+    "id": "rec-2",
+    "author": "Geeta Rajput",
+    "title": "Technical Lead, TCS",
+    "img": "assets/img/1605525460699.jpeg",
+    "text": "Pavan's exceptional contributions as a Full Stack Developer at TCS over three years. His dedication, passion, and extraordinary skills have been nothing short of remarkable. His technical prowess and ability to tackle complex challenges with ease have consistently impressed not only his peers but also our clients and stakeholders. His attention to detail and commitment to delivering high-quality code have played a pivotal role in the success of numerous projects.",
+    "stars": 5,
+    "date": "July 7, 2023",
+    "relationship": "Worked with Pavan on the same team at TCS",
+    "source": "LinkedIn Recommendation"
+  },
+  {
+    "id": "rec-3",
+    "author": "Bhanuteja C",
+    "title": "Full Stack Developer",
+    "img": "assets/img/testimonial2.jpg",
+    "text": "Recommending Pavan Kumar for Full Stack Developer. Exceptional problem-solving mindset, strong technical foundation across modern frontend and backend architectures, and a collaborative team player who drives high-impact software delivery.",
+    "stars": 5,
+    "date": "December 11, 2025",
+    "relationship": "Worked with Pavan at Infosys",
+    "source": "LinkedIn Recommendation"
+  }
+]
