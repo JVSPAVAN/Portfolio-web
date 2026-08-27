@@ -1,0 +1,492 @@
+/* ==========================================================================
+   LINKEDIN POSTS FEED - COMMUNITY IMPACT SECTION
+   ========================================================================== */
+
+.linkedin-community-header {
+  background: var(--container-color);
+  border: 1px solid rgba(10, 102, 194, 0.2);
+  border-radius: 1.25rem;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  box-shadow: 0 10px 30px rgba(10, 102, 194, 0.08);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+body.dark-theme .linkedin-community-header {
+  background: rgba(18, 24, 38, 0.85);
+  border-color: rgba(10, 102, 194, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.linkedin-community-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #0a66c2;
+}
+
+.linkedin-profile-info {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.linkedin-avatar-wrapper {
+  position: relative;
+  width: 68px;
+  height: 68px;
+  flex-shrink: 0;
+}
+
+.linkedin-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2.5px solid #0a66c2;
+  box-shadow: 0 4px 12px rgba(10, 102, 194, 0.25);
+}
+
+.linkedin-badge-icon {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  background: #0a66c2;
+  color: #fff;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  border: 2px solid var(--container-color);
+}
+
+.linkedin-profile-text h3 {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.linkedin-handle {
+  font-size: var(--smaller-font-size);
+  color: #0a66c2;
+  font-weight: var(--font-medium);
+}
+
+.linkedin-headline {
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  margin-top: 0.25rem;
+}
+
+.linkedin-live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: #10b981;
+  font-weight: var(--font-medium);
+  margin-top: 0.35rem;
+}
+
+.linkedin-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulse-live 2s infinite;
+}
+
+@keyframes pulse-live {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.linkedin-profile-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.linkedin-follow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #0a66c2;
+  color: #ffffff !important;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  padding: 0.65rem 1.35rem;
+  border-radius: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(10, 102, 194, 0.35);
+  text-decoration: none;
+}
+
+.linkedin-follow-btn:hover {
+  background: #004182;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(10, 102, 194, 0.5);
+  color: #ffffff !important;
+}
+
+/* Posts Feed Grid */
+.linkedin-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.75rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  .linkedin-posts-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .linkedin-post-card:nth-child(4),
+  .linkedin-post-card:nth-child(5) {
+    grid-column: span 1;
+  }
+}
+
+/* Individual Post Card */
+.linkedin-post-card {
+  background: var(--container-color);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 1.15rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  position: relative;
+}
+
+body.dark-theme .linkedin-post-card {
+  background: rgba(22, 28, 42, 0.75);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+.linkedin-post-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(10, 102, 194, 0.4);
+  box-shadow: 0 12px 30px rgba(10, 102, 194, 0.18);
+}
+
+/* Card Header */
+.linkedin-card-header {
+  padding: 1.25rem 1.25rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.linkedin-card-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.linkedin-author-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #0a66c2;
+  flex-shrink: 0;
+}
+
+.linkedin-author-meta {
+  min-width: 0;
+}
+
+.linkedin-author-name {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.linkedin-author-title {
+  font-size: 0.72rem;
+  color: var(--text-color-light);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+}
+
+.linkedin-post-time {
+  font-size: 0.7rem;
+  color: var(--text-color-light);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 2px;
+}
+
+.linkedin-card-logo {
+  color: #0a66c2;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.linkedin-post-card:hover .linkedin-card-logo {
+  transform: scale(1.1);
+}
+
+/* Post Graphic / Media Banner */
+.linkedin-media-banner {
+  height: 110px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.linkedin-media-icon {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+  opacity: 0.95;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.linkedin-media-caption {
+  font-size: 0.75rem;
+  font-weight: var(--font-medium);
+  letter-spacing: 0.2px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Card Body Content */
+.linkedin-card-body {
+  padding: 1rem 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.linkedin-post-text {
+  font-size: 0.85rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.linkedin-post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.linkedin-tag-badge {
+  font-size: 0.7rem;
+  color: #0a66c2;
+  background: rgba(10, 102, 194, 0.08);
+  padding: 0.2rem 0.55rem;
+  border-radius: 0.5rem;
+  font-weight: var(--font-medium);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+body.dark-theme .linkedin-tag-badge {
+  background: rgba(10, 102, 194, 0.22);
+  color: #70b5f9;
+}
+
+.linkedin-tag-badge:hover {
+  background: #0a66c2;
+  color: #fff;
+}
+
+/* Card Footer & Engagement Bar */
+.linkedin-card-footer {
+  padding: 0.85rem 1.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  background: rgba(0, 0, 0, 0.015);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+body.dark-theme .linkedin-card-footer {
+  border-top-color: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.linkedin-metrics {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.78rem;
+  color: var(--text-color-light);
+}
+
+.linkedin-reactions-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.linkedin-reaction-icons {
+  display: inline-flex;
+  margin-right: 2px;
+}
+
+.reaction-bubble {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.62rem;
+  margin-left: -4px;
+  border: 1.5px solid var(--container-color);
+}
+
+.reaction-bubble:first-child {
+  margin-left: 0;
+}
+
+.reaction-like { background: #0a66c2; color: #fff; }
+.reaction-celebrate { background: #378fe9; color: #fff; }
+.reaction-love { background: #df704d; color: #fff; }
+
+.linkedin-comments-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.linkedin-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: var(--font-semi-bold);
+  color: #0a66c2;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.linkedin-view-btn:hover {
+  color: #004182;
+  transform: translateX(2px);
+}
+
+body.dark-theme .linkedin-view-btn {
+  color: #70b5f9;
+}
+
+body.dark-theme .linkedin-view-btn:hover {
+  color: #9eccff;
+}
+
+/* Skeleton Loading Animation */
+.linkedin-skeleton-card {
+  background: var(--container-color);
+  border-radius: 1.15rem;
+  padding: 1.25rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.06) 25%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.06) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+body.dark-theme .skeleton-shimmer {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.05) 75%);
+  background-size: 200% 100%;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.skeleton-header {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.skeleton-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.skeleton-meta {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.skeleton-line-title { width: 60%; height: 14px; }
+.skeleton-line-sub { width: 40%; height: 10px; }
+
+.skeleton-banner {
+  width: 100%;
+  height: 100px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.skeleton-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeleton-line { width: 100%; height: 12px; }
+.skeleton-line-short { width: 75%; height: 12px; }

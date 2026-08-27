@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="assets/css/styles.css?v=7">
     <link rel="stylesheet" href="assets/css/grid.css?v=6">
     <link rel="stylesheet" href="assets/css/skills.css">
+    <link rel="stylesheet" href="assets/css/linkedin-feed.css?v=1">
     <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"/>
     <script>document.documentElement.className="js";</script>
 
@@ -701,44 +702,37 @@
         <!--==================== COMMUNITY IMPACT ====================-->
         <section class="community section" id="community">
             <h2 class="section__title">Community <span style="color: var(--first-color)">Impact</span></h2>
-            <span class="section__subtitle">Empowering the ecosystem through mentorship and contributions</span>
+            <span class="section__subtitle">Live insights, mentorship, and tech thoughts from LinkedIn</span>
 
-            <div class="community__container container grid">
-                <!-- Impact Card 1 -->
-                <div class="community__card">
-                    <div class="community__img-wrapper">
-                        <i class="uil uil-award community__icon-overlay"></i>
-                        <!-- Placeholder for image -->
-                        <div class="community__img-placeholder"></div>
-                    </div>
-                    
-                    <div class="community__data">
-                        <div class="community__stats">
-                            <i class="uil uil-clock"></i> 50+ Hours Mentored
+            <div class="container">
+                <!-- LinkedIn Profile & Follow Header -->
+                <div class="linkedin-community-header">
+                    <div class="linkedin-profile-info">
+                        <div class="linkedin-avatar-wrapper">
+                            <img src="assets/img/Square_Fit_2023212.png" alt="Pavan Kumar" class="linkedin-avatar-img">
+                            <span class="linkedin-badge-icon"><i class="uil uil-linkedin"></i></span>
                         </div>
-                        <h3 class="community__title">Mentorship</h3>
-                        <p class="community__description">
-                            Guiding aspiring developers through code reviews, career advice, and one-on-one sessions to help them break into the industry.
-                        </p>
+                        <div class="linkedin-profile-text">
+                            <h3>Pavan Kumar <i class="uil uil-check-circle" style="color: #0a66c2; font-size: 1.15rem;"></i></h3>
+                            <span class="linkedin-handle">@pavansoftware</span>
+                            <div class="linkedin-headline">Specialist Programmer @ Infosys | Full Stack Developer | 8+ Yrs Exp</div>
+                            <div class="linkedin-live-indicator">
+                                <span class="linkedin-pulse-dot"></span>
+                                <span>Live Feed &bull; 5 Latest LinkedIn Posts</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="linkedin-profile-actions">
+                        <a href="https://www.linkedin.com/in/pavansoftware/" target="_blank" rel="noopener noreferrer" class="linkedin-follow-btn">
+                            <i class="uil uil-plus"></i> Follow on LinkedIn
+                        </a>
                     </div>
                 </div>
 
-                <!-- Impact Card 2 -->
-                <div class="community__card">
-                    <div class="community__img-wrapper">
-                        <i class="uil uil-github community__icon-overlay"></i>
-                        <div class="community__img-placeholder" style="background: linear-gradient(45deg, #2b32b2, #1488cc);"></div>
-                    </div>
-                    
-                    <div class="community__data">
-                        <div class="community__stats">
-                            <i class="uil uil-code-branch"></i> 100+ Contributions
-                        </div>
-                        <h3 class="community__title">Open Source</h3>
-                        <p class="community__description">
-                            Actively contributing to open-source projects, fixing bugs, and building tools to help the developer community.
-                        </p>
-                    </div>
+                <!-- Dynamic LinkedIn Posts Grid (Latest 5 fetched via API) -->
+                <div class="linkedin-posts-grid" id="community-linkedin-feed">
+                    <!-- Skeletons / Cards dynamically injected by assets/js/linkedin-posts.js -->
                 </div>
             </div>
         </section>
@@ -1000,6 +994,9 @@
     <script src="assets/js/skills-3d.js?v=2"></script>
 
     <script type="module" src="assets/js/grid/main.js?v=21"></script>
+
+    <!-- LinkedIn Posts Live Feed Script -->
+    <script src="assets/js/linkedin-posts.js?v=1"></script>
 
     <!-- 3D Sphere Carousel Importmap & Script -->
     <script type="importmap">
