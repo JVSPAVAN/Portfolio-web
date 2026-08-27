@@ -266,6 +266,28 @@ body.dark-theme .linkedin-post-card {
   transform: scale(1.1);
 }
 
+/* Real Post Image Attachment */
+.linkedin-media-image-container {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+  background: rgba(0, 0, 0, 0.05);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.linkedin-media-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.linkedin-post-card:hover .linkedin-media-image {
+  transform: scale(1.04);
+}
+
 /* Post Graphic / Media Banner */
 .linkedin-media-banner {
   height: 110px;

@@ -1,142 +1,125 @@
 [
   {
-    "id": "post-5",
-    "urn": "urn:li:activity:7168924018293041152",
+    "id": "post-1",
+    "urn": "urn:li:activity:7210000000000000001",
     "author": {
       "name": "Pavan Kumar",
-      "headline": "Specialist Programmer @ Infosys | Full Stack Developer | 8+ Yrs Exp",
+      "headline": "Angular Full Stack Developer | Infosys | Ex-TCS",
       "avatar": "assets/img/Square_Fit_2023212.png",
       "profileUrl": "https://www.linkedin.com/in/pavansoftware/"
     },
-    "timestamp": "2 days ago",
-    "date": "2026-08-25",
-    "content": "Designing resilient microservices isn't just about breaking down a monolith—it's about observability, distributed tracing, and fault tolerance at scale. In our latest architectural refactor at Infosys, adopting event-driven workflows cut latency by 35% and boosted throughput during peak loads. Always engineer for failure before it happens!\n\n#Microservices #Java #Spring #DistributedSystems #SoftwareEngineering #CloudArchitecture",
-    "tags": ["#Microservices", "#Java", "#Spring", "#DistributedSystems", "#SoftwareEngineering"],
+    "timestamp": "2mo ago",
+    "date": "2026-06-25",
+    "content": "One thing I've genuinely appreciated at Infosys is the strong focus on AI adoption across the organization. As technology continues to evolve, Infosys is actively encouraging associates to learn, innovate, and integrate AI into everyday workflows. The Hartford Hub is leading the AI way, empowering associates and delivering real value to our clients.",
+    "tags": ["#Infosys", "#ArtificialIntelligence", "#Innovation", "#HartfordHub", "#ContinuousLearning", "#AIAdoption"],
+    "image": "assets/img/linkedin/post1-ai.png",
+    "imageAlt": "Infosys Hartford Hub - Leading the AI way",
     "metrics": {
-      "likes": 86,
-      "celebrates": 24,
-      "loves": 18,
-      "comments": 15,
-      "reposts": 7
+      "likes": 16,
+      "comments": 0,
+      "reposts": 0,
+      "impressions": "532"
     },
-    "postUrl": "https://www.linkedin.com/in/pavansoftware/recent-activity/all/",
-    "media": {
-      "type": "gradient",
-      "gradient": "linear-gradient(135deg, #0a66c2 0%, #004182 100%)",
-      "icon": "uil-server-network",
-      "caption": "Architectural Patterns for High-Throughput Microservices"
-    }
-  },
-  {
-    "id": "post-4",
-    "urn": "urn:li:activity:7166749018293041151",
-    "author": {
-      "name": "Pavan Kumar",
-      "headline": "Specialist Programmer @ Infosys | Full Stack Developer | 8+ Yrs Exp",
-      "avatar": "assets/img/Square_Fit_2023212.png",
-      "profileUrl": "https://www.linkedin.com/in/pavansoftware/"
-    },
-    "timestamp": "1 week ago",
-    "date": "2026-08-20",
-    "content": "Mentoring early-career software engineers has been one of the most rewarding experiences of my 8+ year tech journey. Last weekend wrapped up another 10+ hours of 1-on-1 code reviews and career coaching. The most frequent lesson? Clean code and clear communication beat clever syntax every single time.\n\n#Mentorship #CareerGrowth #SoftwareEngineering #Leadership #FullStackDeveloper",
-    "tags": ["#Mentorship", "#CareerGrowth", "#SoftwareEngineering", "#Leadership"],
-    "metrics": {
-      "likes": 142,
-      "celebrates": 48,
-      "loves": 36,
-      "comments": 28,
-      "reposts": 12
-    },
-    "postUrl": "https://www.linkedin.com/in/pavansoftware/recent-activity/all/",
-    "media": {
-      "type": "gradient",
-      "gradient": "linear-gradient(135deg, #1d976c 0%, #2b32b2 100%)",
-      "icon": "uil-users-alt",
-      "caption": "Mentoring & Empowering the Next Generation of Developers"
-    }
-  },
-  {
-    "id": "post-3",
-    "urn": "urn:li:activity:7164219018293041150",
-    "author": {
-      "name": "Pavan Kumar",
-      "headline": "Specialist Programmer @ Infosys | Full Stack Developer | 8+ Yrs Exp",
-      "avatar": "assets/img/Square_Fit_2023212.png",
-      "profileUrl": "https://www.linkedin.com/in/pavansoftware/"
-    },
-    "timestamp": "2 weeks ago",
-    "date": "2026-08-13",
-    "content": "Why Kubernetes + Spring Boot is a developer superpower: containerizing cloud-native applications with multi-stage Docker builds and automated canary deployments reduced our release rollbacks to near zero. Loving the efficiency gains!\n\n#Docker #Kubernetes #DevOps #SpringBoot #Java #CloudNative",
-    "tags": ["#Docker", "#Kubernetes", "#DevOps", "#SpringBoot", "#CloudNative"],
-    "metrics": {
-      "likes": 98,
-      "celebrates": 19,
-      "loves": 22,
-      "comments": 11,
-      "reposts": 5
-    },
-    "postUrl": "https://www.linkedin.com/in/pavansoftware/recent-activity/all/",
-    "media": {
-      "type": "gradient",
-      "gradient": "linear-gradient(135deg, #2b5876 0%, #4e4376 100%)",
-      "icon": "uil-layer-group",
-      "caption": "Containerization & Cloud Native Deployments in Production"
-    }
+    "postUrl": "https://www.linkedin.com/in/pavansoftware/recent-activity/all/"
   },
   {
     "id": "post-2",
-    "urn": "urn:li:activity:7161839018293041149",
+    "urn": "urn:li:activity:7210000000000000002",
     "author": {
       "name": "Pavan Kumar",
-      "headline": "Specialist Programmer @ Infosys | Full Stack Developer | 8+ Yrs Exp",
+      "headline": "Angular Full Stack Developer | Infosys | Ex-TCS",
       "avatar": "assets/img/Square_Fit_2023212.png",
       "profileUrl": "https://www.linkedin.com/in/pavansoftware/"
     },
-    "timestamp": "3 weeks ago",
-    "date": "2026-08-06",
-    "content": "Crossed 100+ open-source contributions this quarter! Whether it's patching race conditions in async pipelines or writing documentation that actually helps beginners, giving back to the ecosystem is how we all grow together.\n\n#OpenSource #GitHub #DeveloperCommunity #GivingBack #TechGrowth",
-    "tags": ["#OpenSource", "#GitHub", "#DeveloperCommunity", "#TechGrowth"],
+    "timestamp": "4mo ago",
+    "date": "2026-04-20",
+    "content": "Reliving one of the best office memories from last year—our Infosys cricket game 🏏. What started as a casual Infosys Tournament turned into pure energy, teamwork, and a lot of unforgettable moments. Grateful for this amazing team!",
+    "tags": ["#Infosys", "#CricketTournament", "#Teamwork", "#LifeAtInfosys", "#WorkCulture"],
+    "image": "assets/img/linkedin/post2-cricket.png",
+    "imageAlt": "Infosys Cricket Tournament Team Photos",
     "metrics": {
-      "likes": 115,
-      "celebrates": 32,
-      "loves": 25,
-      "comments": 19,
-      "reposts": 8
+      "likes": 22,
+      "comments": 0,
+      "reposts": 0,
+      "impressions": "1,723"
     },
-    "postUrl": "https://www.linkedin.com/in/pavansoftware/recent-activity/all/",
-    "media": {
-      "type": "gradient",
-      "gradient": "linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%)",
-      "icon": "uil-github",
-      "caption": "Community Contributions & Open Source Impact"
-    }
+    "postUrl": "https://www.linkedin.com/in/pavansoftware/recent-activity/all/"
   },
   {
-    "id": "post-1",
-    "urn": "urn:li:activity:7159399018293041148",
+    "id": "post-3",
+    "urn": "urn:li:activity:7210000000000000003",
     "author": {
       "name": "Pavan Kumar",
-      "headline": "Specialist Programmer @ Infosys | Full Stack Developer | 8+ Yrs Exp",
+      "headline": "Angular Full Stack Developer | Infosys | Ex-TCS",
       "avatar": "assets/img/Square_Fit_2023212.png",
       "profileUrl": "https://www.linkedin.com/in/pavansoftware/"
     },
-    "timestamp": "1 month ago",
-    "date": "2026-07-28",
-    "content": "Frontend performance tip: Avoid unnecessary layout recalculations and DOM thrashing. Leveraging CSS containment, modern grid clamping, and hardware-accelerated transforms made our 3D UI render at a locked 60fps across both low-end mobile and high-refresh desktop displays.\n\n#WebPerf #JavaScript #CSS #FrontendArchitecture #UIUX #ThreeJS",
-    "tags": ["#WebPerf", "#JavaScript", "#CSS", "#FrontendArchitecture", "#UIUX"],
-    "metrics": {
-      "likes": 164,
-      "celebrates": 51,
-      "loves": 40,
-      "comments": 23,
-      "reposts": 14
-    },
-    "postUrl": "https://www.linkedin.com/in/pavansoftware/recent-activity/all/",
+    "timestamp": "6mo ago",
+    "date": "2026-02-15",
+    "content": "The Architecture of Connection: Beyond the Platform\n\n\"Where does a person truly begin, and where do they end?\"\n\nA deeper look at how engineering robust digital platforms transcends technology to build meaningful human connections and collaboration.",
+    "tags": ["#SoftwareArchitecture", "#Engineering", "#TechThoughts", "#DigitalPlatforms"],
     "media": {
       "type": "gradient",
-      "gradient": "linear-gradient(135deg, #654ea3 0%, #eaafc8 100%)",
-      "icon": "uil-tachometer-fast",
-      "caption": "60fps Web Performance & High-Fidelity Interactive UI"
-    }
+      "gradient": "linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)",
+      "icon": "uil-circuit",
+      "caption": "The Architecture of Connection: Beyond the Platform"
+    },
+    "metrics": {
+      "likes": 2,
+      "comments": 0,
+      "reposts": 0,
+      "impressions": "545"
+    },
+    "postUrl": "https://www.linkedin.com/in/pavansoftware/recent-activity/all/"
+  },
+  {
+    "id": "post-4",
+    "urn": "urn:li:activity:7210000000000000004",
+    "author": {
+      "name": "Pavan Kumar",
+      "headline": "Angular Full Stack Developer | Infosys | Ex-TCS",
+      "avatar": "assets/img/Square_Fit_2023212.png",
+      "profileUrl": "https://www.linkedin.com/in/pavansoftware/"
+    },
+    "timestamp": "6mo ago",
+    "date": "2026-02-05",
+    "content": "Throwback: Small Smiles, Big Impact!\n\nA look back at a wonderful day in our Infosys Hartford office celebrating together, building friendships, and creating positive energy across our teams.",
+    "tags": ["#Infosys", "#HartfordOffice", "#TeamCelebration", "#LifeAtInfosys"],
+    "image": "assets/img/linkedin/post4-office.png",
+    "imageAlt": "Infosys Hartford Office Celebration",
+    "metrics": {
+      "likes": 52,
+      "comments": 0,
+      "reposts": 0,
+      "impressions": "2,642"
+    },
+    "postUrl": "https://www.linkedin.com/in/pavansoftware/recent-activity/all/"
+  },
+  {
+    "id": "post-5",
+    "urn": "urn:li:activity:7210000000000000005",
+    "author": {
+      "name": "Pavan Kumar",
+      "headline": "Angular Full Stack Developer | Infosys | Ex-TCS",
+      "avatar": "assets/img/Square_Fit_2023212.png",
+      "profileUrl": "https://www.linkedin.com/in/pavansoftware/"
+    },
+    "timestamp": "1yr ago",
+    "date": "2025-08-10",
+    "content": "Excited to Explore New Opportunities!\n\nHello everyone, reflecting on key engineering milestones, sharpening full-stack enterprise patterns, and looking forward to driving high-impact software solutions.",
+    "tags": ["#CareerGrowth", "#FullStackDeveloper", "#Angular", "#NewOpportunities"],
+    "media": {
+      "type": "gradient",
+      "gradient": "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
+      "icon": "uil-rocket",
+      "caption": "Excited to Explore New Opportunities!"
+    },
+    "metrics": {
+      "likes": 12,
+      "comments": 0,
+      "reposts": 0,
+      "impressions": "1,473"
+    },
+    "postUrl": "https://www.linkedin.com/in/pavansoftware/recent-activity/all/"
   }
 ]

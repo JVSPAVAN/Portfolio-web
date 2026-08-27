@@ -49,14 +49,30 @@
       .map(tag => `<span class="linkedin-tag-badge">${tag}</span>`)
       .join('');
 
-    // Media Banner HTML
+    // Media Banner or Image HTML
     let mediaHTML = '';
-    if (post.media && post.media.gradient) {
+    if (post.image) {
+      mediaHTML = `
+        <div class="linkedin-media-image-container">
+          <img src="${post.image}" alt="${post.imageAlt || 'LinkedIn Post'}" class="linkedin-media-image" loading="lazy">
+        </div>
+      `;
+    } else if (post.media && post.media.gradient) {
       mediaHTML = `
         <div class="linkedin-media-banner" style="background: ${post.media.gradient}">
           <i class="uil ${post.media.icon || 'uil-newspaper'} linkedin-media-icon"></i>
           <span class="linkedin-media-caption">${post.media.caption || 'LinkedIn Update'}</span>
         </div>
+      `;
+    }
+
+    // Impressions HTML
+    let impressionsHTML = '';
+    if (post.metrics && post.metrics.impressions) {
+      impressionsHTML = `
+        <span class="linkedin-impressions-count" title="${post.metrics.impressions} impressions">
+          <i class="uil uil-chart-line"></i> ${post.metrics.impressions}
+        </span>
       `;
     }
 
@@ -67,7 +83,7 @@
             <img src="${post.author.avatar}" alt="${post.author.name}" class="linkedin-author-avatar" onerror="this.src='assets/img/perfil.png'">
             <div class="linkedin-author-meta">
               <div class="linkedin-author-name">${post.author.name}</div>
-              <div class="linkedin-author-title">${post.author.headline || 'Specialist Programmer @ Infosys'}</div>
+              <div class="linkedin-author-title">${post.author.headline || 'Angular Full Stack Developer | Infosys | Ex-TCS'}</div>
               <div class="linkedin-post-time">
                 <i class="uil uil-clock-three"></i> ${post.timestamp}
               </div>
@@ -98,9 +114,7 @@
               <span>${totalReactions}</span>
             </span>
 
-            <span class="linkedin-comments-count" title="${commentsCount} comments">
-              <i class="uil uil-comment-alt-lines"></i> ${commentsCount}
-            </span>
+            ${impressionsHTML}
           </div>
 
           <a href="${postUrl}" target="_blank" rel="noopener noreferrer" class="linkedin-view-btn">
